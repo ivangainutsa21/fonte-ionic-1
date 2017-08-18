@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<widget id="com.equipmozambique.fontedavida" version="3.5.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:gap="http://phonegap.com/ns/1.0" versionCode="30503">
+  <name>
+    Fonte da Vida
+  </name>
+  <description>
+        Biblia e Sermoes na sua Língua!
+  </description>
+  <author email="jon@equipmoz.org" href="http://equipmoz.org">
+      Jon Reinagel
+  </author>
+  <content src="index.html"/>
+  <access origin="*" subdomains="true"/>
+  <allow-navigation href="http://*/*"/>
+  <allow-navigation href="https://*/*"/>
+  <allow-navigation href="http://192.168.100.9:8101"/>
+  <allow-navigation href="http://192.168.1.12:8100"/>
+  <allow-navigation href="http://192.168.100.9:8100"/>
+  <allow-navigation href="http://192.168.100.3:8100"/>
+  <allow-navigation href="http://192.168.100.5:8100"/>
+  <allow-navigation href="http://192.168.1.12:8102"/>
+  <allow-navigation href="http://192.168.1.12:8101"/>
+  <allow-navigation href="http://192.168.100.10:8100"/>
+  <allow-navigation href="http://192.168.100.8:8100"/>
+  <allow-navigation href="http://192.168.43.62:8100"/>
+  <allow-navigation href="http://192.168.43.62:8101"/>
+  <allow-intent href="http://*/*"/>
+  <allow-intent href="https://*/*"/>
+  <preference name="target-device" value="universal"/>
+  <preference name="fullscreen" value="true"/>
+  <preference name="phonegap-version" value="cli-5.4.1"/>
+  <preference name="webviewbounce" value="false"/>
+  <preference name="UIWebViewBounce" value="false"/>
+  <preference name="DisallowOverscroll" value="true"/>
+  <preference name="android-build-tool" value="gradle"/>
+  <preference name="BackupWebStorage" value="none"/>
+  <preference name="loadUrlTimeoutValue" value="120000"/>
+  <preference name="android-targetSdkVersion" tools:overrideLibrary="org.apache.cordova" value="22"/>
+  <preference name="cordova-custom-config-autorestore" value="true"/>
+  <preference name="SplashScreen" value="screen"/>
+  <preference name="SplashScreenDelay" value="5000"/>
+  <preference name="AutoHideSplashScreen" value="false"/>
+  <preference name="ShowSplashScreenSpinner" value="false"/>
+  <feature name="StatusBar">
+    <param name="ios-package" onload="false" value="CDVStatusBar"/>
+  </feature>
+  <feature name="UniversalAnalytics">
+    <param name="ios-package" value="UniversalAnalyticsPlugin"/>
+  </feature>
+  <feature name="UniversalAnalytics">
+    <param name="android-package" value="com.danielcwilson.plugins.analytics.UniversalAnalyticsPlugin"/>
+  </feature>
+  <feature name="UniversalAnalytics">
+    <param name="wp-package" value="UniversalAnalyticsPlugin"/>
+  </feature>
+  <plugin name="cordova-plugin-media-controller" spec="https://github.com/ghenry22/cordova-plugin-music-controller"/>
+  <plugin name="cordova-plugin-music-controls" spec="https://github.com/homerours/cordova-music-controls-plugin"/>
+  <plugin name="cordova-plugin-firebase" spec="0.1.23"/>
+  <plugin spec="https://github.com/apache/cordova-plugin-splashscreen.git"/>
+  <plugin name="cordova-plugin-whitelist"/>
+  <plugin name="cordova-plugin-statusbar"/>
+  <plugin name="cordova-plugin-globalization"/>
+  <plugin name="cordova-plugin-file"/>
+  <plugin name="cordova-plugin-file-opener2"/>
+  <plugin name="ionic-plugin-keyboard"/>
+  <plugin name="cordova-plugin-network-information"/>
+  <plugin name="cordova-plugin-geolocation"/>
+  <plugin name="https://github.com/Telerik-Verified-Plugins/DocumentHandler"/>
+  <plugin name="cordova-custom-config" spec="~2.0.3"/>
+  <plugin name="cordova-plugin-file-transfer" spec="~1.5.1"/>
+  <hook type="after_prepare" src="hooks/after_prepare/030_android_manifest_changes.js"/>
+  <platform name="android">
+    <preference name="AndroidPersistentFileLocation" value="Compatibility"/>
+    <preference name="android-manifest/@android:installLocation" value="auto"/>
+    <preference name="io.fabric.ApiKey" value="be09a87d2328f7781da6b05a3b401f49466b67d2"/>
+    <icon density="ldpi" src="resources\android\icon\drawable-ldpi-icon.png"/>
+    <icon density="mdpi" src="resources\android\icon\drawable-mdpi-icon.png"/>
+    <icon density="hdpi" src="resources\android\icon\drawable-hdpi-icon.png"/>
+    <icon density="xhdpi" src="resources\android\icon\drawable-xhdpi-icon.png"/>
+    <icon density="xxhdpi" src="resources\android\icon\drawable-xxhdpi-icon.png"/>
+    <icon density="xxxhdpi" src="resources\android\icon\drawable-xxxhdpi-icon.png"/>
+    <splash src="resources\android\splash\drawable-land-ldpi-screen.png" density="land-ldpi"/>
+    <splash src="resources\android\splash\drawable-land-mdpi-screen.png" density="land-mdpi"/>
+    <splash src="resources\android\splash\drawable-port-ldpi-screen.png" density="port-ldpi"/>
+    <splash src="resources\android\splash\drawable-port-mdpi-screen.png" density="port-mdpi"/>
+    <splash src="resources\android\splash\drawable-port-hdpi-screen.png" density="port-hdpi"/>
+    <splash src="resources\android\splash\drawable-port-xhdpi-screen.png" density="port-xhdpi"/>
+  </platform>
+  <platform name="ios">
+    <gap:splash height="480" src="images/ios/iphone-p.png" width="320"/>
+    <gap:splash height="960" src="images/ios/iphone6-2x-l.png" width="640"/>
+    <gap:splash height="1136" src="images/ios/iphone6-2x-p.png" width="640"/>
+    <gap:splash height="1024" src="images/ios/ipad-p.png" width="768"/>
+    <gap:splash height="768" src="images/ios/ipad-l.png" width="1024"/>
+    <gap:plugin name="com.ionic.keyboard"/>
+    <icon height="57" src="resources\ios\icon\icon.png" width="57"/>
+    <icon height="114" src="resources\ios\icon\icon@2x.png" width="114"/>
+    <icon height="40" src="resources\ios\icon\icon-40.png" width="40"/>
+    <icon height="80" src="resources\ios\icon\icon-40@2x.png" width="80"/>
+    <icon height="120" src="resources\ios\icon\icon-40@3x.png" width="120"/>
+    <icon height="50" src="resources\ios\icon\icon-50.png" width="50"/>
+    <icon height="100" src="resources\ios\icon\icon-50@2x.png" width="100"/>
+    <icon height="60" src="resources\ios\icon\icon-60.png" width="60"/>
+    <icon height="120" src="resources\ios\icon\icon-60@2x.png" width="120"/>
+    <icon height="180" src="resources\ios\icon\icon-60@3x.png" width="180"/>
+    <icon height="72" src="resources\ios\icon\icon-72.png" width="72"/>
+    <icon height="144" src="resources\ios\icon\icon-72@2x.png" width="144"/>
+    <icon height="76" src="resources\ios\icon\icon-76.png" width="76"/>
+    <icon height="152" src="resources\ios\icon\icon-76@2x.png" width="152"/>
+    <icon height="167" src="resources\ios\icon\icon-83.5@2x.png" width="167"/>
+    <icon height="29" src="resources\ios\icon\icon-small.png" width="29"/>
+    <icon height="58" src="resources\ios\icon\icon-small@2x.png" width="58"/>
+    <icon height="87" src="resources\ios\icon\icon-small@3x.png" width="87"/>
+    <splash src="resources\ios\splash\Default-568h@2x~iphone.png" width="640" height="1136"/>
+    <splash src="resources\ios\splash\Default@2x~iphone.png" width="640" height="960"/>
+    <splash src="resources\ios\splash\Default~iphone.png" width="320" height="480"/>
+  </platform>
+  <platform name="winphone">
+    <icon height="71" src="images/wp-tile-71.png" width="71"/>
+    <icon height="99" src="images/wp-tile-99.png" width="99"/>
+    <icon height="110" src="images/wp-tile-110.png" width="110"/>
+    <icon height="150" src="images/wp-tile-150.png" width="150"/>
+    <icon height="159" src="images/wp-tile-159.png" width="159"/>
+    <icon height="170" src="images/wp-tile-170.png" width="170"/>
+    <icon height="202" src="images/wp-tile-202.png" width="202"/>
+    <icon height="336" role="background" src="images/wp-tile-336.png" width="336"/>
+  </platform>
+  <gap:splash src="splash.png"/>
+  <gap:splash gap:density="ldpi" gap:platform="android" src="images/splash-160x220.png"/>
+  <gap:splash gap:density="mdpi" gap:platform="android" src="splash.png"/>
+  <gap:splash gap:density="hdpi" gap:platform="android" src="images/splash-450x650.png"/>
+  <gap:splash gap:platform="ios" height="1136" src="images/Default-568h@2x.png" width="640"/>
+  <icon src="resources\android\icon\drawable-xhdpi-icon.png"/>
+</widget>

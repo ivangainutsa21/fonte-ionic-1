@@ -1,0 +1,817 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"target",
+				"targetPath"
+			],
+			[
+				"or",
+				"organization_id"
+			],
+			[
+				"type",
+				"typeof"
+			],
+			[
+				"ViewChild",
+				"ViewChild\talias"
+			],
+			[
+				"ion-",
+				"ion-chevron-right"
+			],
+			[
+				"Pt",
+				"Pt"
+			],
+			[
+				"background-",
+				"background-size"
+			],
+			[
+				"fon",
+				"font-family"
+			],
+			[
+				"hide",
+				"hide"
+			],
+			[
+				"reoccurring",
+				"reoccurring-donation"
+			],
+			[
+				"ge",
+				"geoLocationSuccess"
+			],
+			[
+				"c",
+				"connection"
+			],
+			[
+				"Play",
+				"PlayerCtrl"
+			],
+			[
+				"con",
+				"console"
+			],
+			[
+				"playlist",
+				"playlistService"
+			],
+			[
+				"ev",
+				"eventSource"
+			],
+			[
+				"EquipMoz",
+				"equipmoz"
+			],
+			[
+				"download",
+				"Download"
+			],
+			[
+				"downloads",
+				"downloadsCompleted"
+			],
+			[
+				"shouldSho",
+				"shouldShowReorder"
+			],
+			[
+				"should",
+				"shouldShowReorder"
+			],
+			[
+				"langu",
+				"language-display"
+			],
+			[
+				"down",
+				"downloadProgress"
+			],
+			[
+				"fileUrl",
+				"fileUrlLocalPath"
+			],
+			[
+				"item",
+				"item-text-wrap"
+			],
+			[
+				"Download",
+				"DownloadCtrl"
+			],
+			[
+				"item-",
+				"item-icon-left"
+			],
+			[
+				"license",
+				"license_type_id"
+			],
+			[
+				"back",
+				"background"
+			],
+			[
+				"book_",
+				"book_info_downloaded"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "hooks/after_prepare/030_android_manifest_changes.js",
+			"settings":
+			{
+				"buffer_size": 1590,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "config.xml",
+			"settings":
+			{
+				"buffer_size": 8142,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "www/index.html",
+			"settings":
+			{
+				"buffer_size": 9296,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "platforms/android/AndroidManifest.xml",
+			"settings":
+			{
+				"buffer_size": 3459,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 213.0,
+		"last_filter": "insta",
+		"selected_items":
+		[
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"pa",
+				"Install Package Control"
+			]
+		],
+		"width": 571.0
+	},
+	"console":
+	{
+		"height": 162.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/wamp/www/fonte",
+		"/C/wamp/www/fonte/www",
+		"/C/wamp/www/fonte/www/ajax",
+		"/C/wamp/www/fonte/www/css",
+		"/C/wamp/www/fonte/www/js",
+		"/C/wamp/www/fonte/www/templates",
+		"/C/wamp/www/fonte/www/translation"
+	],
+	"file_history":
+	[
+		"/C/wamp/www/test_connections.php",
+		"/C/wamp/www/fonte/www/js/main-controllers.js",
+		"/C/wamp/www/fonte/www/js/page-controllers.js",
+		"/C/Users/Jon/Downloads/test.php",
+		"/C/Users/Jon/AppData/Local/Temp/fz3temp-2/_form.php",
+		"/C/Users/Jon/AppData/Local/Temp/fz3temp-2/index.php",
+		"/C/wamp/www/test.php",
+		"/C/wamp/www/fonte/www/templates/resource-resourcedetail.html",
+		"/C/wamp/www/fonte/www/js/services.js",
+		"/C/wamp/www/fonte/hooks/after_prepare/030_android_manifest_changes.js",
+		"/C/wamp/www/fonte/www/templates/tab-download.html",
+		"/C/wamp/www/fonte/www/js/directives.js",
+		"/C/wamp/www/fonte/www/index.html",
+		"/C/wamp/www/fonte/www/ajax/country.json",
+		"/C/wamp/www/fonte/package.json",
+		"/C/wamp/www/fonte/config.xml",
+		"/C/wamp/www/fonte/www/templates/sermons-detail.html",
+		"/C/wamp/www/fonte/www/js/app.js",
+		"/C/wamp/www/fonte-saved/www/js/directives.js",
+		"/C/wamp/www/fonte/platforms/android/AndroidManifest.xml",
+		"/C/wamp/www/fonte-saved/platforms/android/AndroidManifest.xml",
+		"/C/wamp/www/fonte/www/js/filters.js",
+		"/C/wamp/www/fonte/hooks/after_build/afterBuild.js",
+		"/C/wamp/www/fonte/plugins/com.filfatstudios.musiccontroller/plugin.xml",
+		"/C/wamp/www/fonte/plugins/android.json",
+		"/C/wamp/www/fonte/ionic.config.json",
+		"/C/wamp/www/fonte/www/templates/tab-dash.html",
+		"/C/wamp/www/fonte/www/templates/tabs.html",
+		"/C/Users/Jon/AppData/Local/Temp/fz3temp-2/Teaching.php",
+		"/C/Users/Jon/AppData/Local/Temp/fz3temp-2/TeachingController.php",
+		"/C/Users/Jon/AppData/Local/Temp/fz3temp-2/TeachingSearch.php",
+		"/C/Users/Jon/AppData/Local/Temp/fz3temp-2/Resource.php",
+		"/C/Users/Jon/AppData/Local/Temp/fz3temp-2/ResourceSearch.php",
+		"/C/Users/Jon/AppData/Local/Temp/fz3temp-2/ResourceController.php",
+		"/C/wamp/www/fonte/www/ajax/languages.json",
+		"/C/wamp/www/fonte/www/templates/tab-resources.html",
+		"/C/Users/Jon/AppData/Local/Temp/fz3temp-2/individual-messaging.js",
+		"/C/wamp/www/fonte/www/ajax/countries.json",
+		"/C/wamp/www/fonte/www/css/style.css",
+		"/C/wamp/www/fonte/www/templates/header-bar.html",
+		"/C/wamp/www/fonte/www/templates/tab-sermons.html",
+		"/C/Users/Jon/AppData/Local/Temp/fz3temp-2/messaging.js",
+		"/C/wamp/www/fonte/www/templates/tab-bible.html",
+		"/C/Users/Jon/AppData/Local/Microsoft/Windows/INetCache/Content.Outlook/ZO5HZEJF/ot_books.json",
+		"/C/wamp/www/fonte/www/ajax/nt_books.json",
+		"/C/wamp/www/fonte/hooks/minify-conf.json",
+		"/C/Users/Jon/AppData/Local/Temp/fz3temp-2/TeachingController 2.php",
+		"/C/Users/Jon/AppData/Local/Temp/fz3temp-2/VideoController.php",
+		"/C/wamp/www/fonte/platforms/android/res/xml/config.xml",
+		"/C/wamp/www/fonte/www/templates/info-partner.html",
+		"/C/wamp/www/fonte/www/templates/videogular-player.html",
+		"/C/wamp/www/iris-app/www/translation/pt.json",
+		"/C/Users/Jon/.ssh/putty.ppk",
+		"/C/wamp/www/fonte/www/config.xml",
+		"/C/wamp/www/fonte/www/translation/pt.json",
+		"/C/wamp/www/fonte/res/native/android/res/values/styles.xml",
+		"/C/wamp/www/fonte/www/templates/info-team.html",
+		"/C/wamp/www/fonte/www/templates/info-privacy.html",
+		"/C/wamp/www/fonte/www/templates/tab-about.html",
+		"/C/wamp/www/iris-app/www/templates/tab-dash.html",
+		"/C/wamp/www/fonte/res/native/android/res/values-21/styles.xml",
+		"/C/wamp/www/fonte/res/native/android/res/values/colors.xml",
+		"/C/wamp/www/fonte/www/templates/tab-info.html",
+		"/C/wamp/www/fonte/www/templates/tab-videos.html",
+		"/C/wamp/www/pong.html",
+		"/C/wamp/www/fonte-saved/package.json",
+		"/D/Videos/new/Leadership on the Line_ Staying Alive Through the Dangers of Leading by Martin Linsky and Ronald L Heifetz MOBI eBOOK-ZAK/Ronald A. Heifetz - Leadership on the Line.mobi",
+		"/C/wamp/www/fonte/www/templates/info-orglist.html",
+		"/C/Users/Jon/Desktop/Subtitles for sewing video DVD2.txt",
+		"/C/wamp/www/fonte2/src/pages/audio/audio.ts",
+		"/C/wamp/www/fonte2-2/src/app/app.component.ts",
+		"/C/wamp/www/fonte2/src/app/app.component.ts",
+		"/C/Users/Jon/Downloads/google9a7c29e728788857.html",
+		"/C/Users/Jon/Downloads/Programming/SMS_Server.json",
+		"/C/wamp/www/fonte/www/templates/info-organization.html",
+		"/C/Users/Jon/AppData/Local/Temp/fz3temp-2/Language.php",
+		"/C/Users/Jon/AppData/Local/Temp/fz3temp-2/LanguageController.php",
+		"/C/wamp/www/fonte_api/html/models/Teaching.php",
+		"/C/wamp/www/fonte_api/html/migrations/m160627_225108_add_license_id.php",
+		"/C/wamp/www/fonte_api/html/controllers/LanguageController.php",
+		"/C/Users/Jon/Downloads/country.sql",
+		"/C/Users/Jon/Downloads/language.sql",
+		"/C/wamp/www/fonte_api/html/views/language/view.php",
+		"/C/wamp/www/fonte_api/html/views/language/index.php",
+		"/C/Users/Jon/AppData/Local/Temp/fz3temp-1/Teaching.php",
+		"/C/Users/Jon/Downloads/tomato_cstats_f07959880200 (2)",
+		"/C/Users/Jon/Downloads/tomato_cstats_f07959880200 (1).gz",
+		"/C/Users/Jon/AppData/Local/Temp/fz3temp-1/LanguageController.php",
+		"/C/Users/Jon/Downloads/dev_api_old/html/models/CountrySearch.php",
+		"/C/Users/Jon/AppData/Local/Temp/fz3temp-1/update.php",
+		"/C/Users/Jon/AppData/Local/Temp/fz3temp-1/db.php",
+		"/C/Users/Jon/AppData/Local/Temp/fz3temp-1/_form 2.php",
+		"/C/Users/Jon/AppData/Local/Temp/fz3temp-1/Country.php",
+		"/C/Users/Jon/Downloads/dev_api_old/html/models/Country.php",
+		"/C/Users/Jon/AppData/Local/Temp/fz3temp-1/CountrySearch.php",
+		"/C/Users/Jon/AppData/Local/Temp/fz3temp-1/update 2.php",
+		"/C/Users/Jon/AppData/Local/Temp/fz3temp-1/create 2.php",
+		"/C/Users/Jon/AppData/Local/Temp/fz3temp-1/view.php",
+		"/C/Users/Jon/AppData/Local/Temp/fz3temp-1/index 2.php",
+		"/C/Users/Jon/Downloads/dev_api_old/html/models/LanguageSearch.php",
+		"/C/Users/Jon/AppData/Local/Temp/fz3temp-1/LanguageSearch.php",
+		"/C/Users/Jon/Downloads/dev_api_old/html/views/country/_form.php",
+		"/C/Users/Jon/Downloads/dev_api_old/html/views/language/update.php",
+		"/C/Users/Jon/AppData/Local/Temp/fz3temp-1/index.php",
+		"/C/wamp/www/fonte_api/html/views/layouts/main.php",
+		"/C/Users/Jon/AppData/Local/Temp/fz3temp-1/CountryController.php",
+		"/C/Users/Jon/Downloads/dev_api_old/html/controllers/LanguageController.php",
+		"/C/Users/Jon/AppData/Local/Temp/fz3temp-1/create.php",
+		"/C/Users/Jon/AppData/Local/Temp/fz3temp-1/_search.php",
+		"/C/Users/Jon/AppData/Local/Temp/fz3temp-1/Language.php",
+		"/C/Users/Jon/AppData/Local/Temp/fz3temp-1/_form.php",
+		"/C/wamp/www/fonte/www/css/flag-css.min.css",
+		"/C/Users/Jon/AppData/Local/Temp/fz3temp-1/ResourceSearch.php",
+		"/C/Users/Jon/AppData/Local/Temp/fz3temp-1/Resource.php",
+		"/C/wamp/www/fonte_api/html/models/Language.php",
+		"/C/wamp/www/fonte_api/html/views/language/_search.php",
+		"/C/wamp/www/fonte_api/html/views/language/create.php",
+		"/C/wamp/www/fonte_api/html/views/language/update.php",
+		"/C/wamp/www/fonte_api/html/views/teaching/view.php",
+		"/C/wamp/www/fonte/www/templates/about-partnership.html",
+		"/C/wamp/www/fonte_api/html/views/teaching/_search.php",
+		"/C/wamp/www/fonte/www/templates/bible-book.html",
+		"/C/wamp/www/fonte_api/html/controllers/TeachingController.php",
+		"/C/wamp/www/fonte_api/html/views/resource/_search.php",
+		"/C/Users/Jon/Downloads/Sean contacts 03.csv",
+		"/C/wamp/www/fonte_api/html/views/site/index.php",
+		"/C/wamp/www/fonte_api/html/models/Resource.php",
+		"/C/wamp/www/fonte_api/html/controllers/ResourceController.php"
+	],
+	"find":
+	{
+		"height": 43.0
+	},
+	"find_in_files":
+	{
+		"height": 117.0,
+		"where_history":
+		[
+			"C:\\wamp\\www\\fonte\\www\\",
+			"C:\\wamp\\www\\fonte\\www\\js",
+			"C:\\wamp\\www\\fonte\\www\\",
+			"C:\\wamp\\www\\fonte\\www\\js",
+			"C:\\wamp\\www\\fonte\\www",
+			"C:\\wamp\\www\\iris-app\\www",
+			"C:\\wamp\\www\\fonte\\www",
+			"C:\\wamp\\www\\fonte_api",
+			"C:\\wamp\\www\\fonte\\www",
+			"C:\\wamp\\www\\fonte_api\\html\\views",
+			"<current file>",
+			"C:\\wamp\\www\\fonte\\www",
+			"<current file>",
+			"C:\\wamp\\www\\fonte\\www",
+			"<current file>,C:\\wamp\\www\\fonte\\www",
+			"<current file>",
+			"C:\\wamp\\www\\fonte\\www",
+			"C:\\wamp\\www\\cnc-app\\www",
+			"C:\\wamp\\www\\newapp\\www",
+			"C:\\wamp\\www\\fonte\\www",
+			"C:\\wamp\\www\\fonte_ionic\\www\\",
+			"C:\\wamp\\www\\fonte_ionic\\www",
+			"C:\\wamp\\www\\fonte_ionic2",
+			"C:\\wamp\\www\\fonte\\www",
+			"<current file>",
+			"<current file>,C:\\wamp\\www\\fonte\\www",
+			"<current file>",
+			"<current file>,C:\\wamp\\www\\fonte\\www",
+			"<current file>",
+			"C:\\wamp\\www\\fonte\\www\\",
+			"C:\\wamp\\www\\fonte\\www\\js",
+			"C:\\wamp\\www\\Fonte_archives\\fonte_ionic\\www\\js",
+			"C:\\wamp\\www\\fonte\\www\\js",
+			"C:\\wamp\\www\\fonte\\www"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"console.log",
+			"countryChange",
+			"changedCountry",
+			"countryChange",
+			"changedCountry",
+			"country",
+			"countries.json",
+			"country.json",
+			"resourceOpen",
+			"playNow(",
+			"download",
+			"setTimeout",
+			"('playlistService",
+			"playlistService",
+			"play begun",
+			"targetPat",
+			"on error",
+			"$emit",
+			"onlineAgain",
+			"getApi",
+			"<!--Language",
+			"download",
+			"sermon",
+			"orgFilter",
+			"Next function",
+			"country changed",
+			"SettingsCtrl",
+			"countryCtrl",
+			"country changed",
+			"output",
+			"push",
+			");\n",
+			"services:70",
+			"resourceList",
+			"resource",
+			"resource_languages",
+			"online",
+			"country",
+			",",
+			"aapNum",
+			"runTimes",
+			"token get",
+			"firebase",
+			"fcm",
+			"ctry",
+			"cntry",
+			"$watch",
+			"ctry",
+			"countryChange",
+			"offline called",
+			"$on",
+			"$emit",
+			"network",
+			"playPause",
+			"music-controls-pause",
+			">>>>>>>",
+			"watch",
+			"rLanguage",
+			"damot",
+			"device",
+			"inAppBrowser",
+			"resourceOpen",
+			"}\n",
+			"getAPI",
+			"rlang",
+			"PORNLHN2DA",
+			"language",
+			"filter",
+			"search",
+			"search_query",
+			"gap:config-file",
+			"Unknown error",
+			"unsubscribe",
+			"$watch",
+			"listBookSet",
+			"checkDirExists",
+			"video-tab",
+			"videos called",
+			"copyright pull",
+			"incinamentos",
+			"3.0.3",
+			"density",
+			"$http.get",
+			"play begun",
+			"onSuccess",
+			"success",
+			"AUDIO_SOURCE_DATA",
+			"chapter_id",
+			"videocam",
+			"SettingsCtrl",
+			"VideosCtrl",
+			"filter",
+			"orgFilter",
+			"rLangFilter",
+			"video",
+			"videoController",
+			"]\n",
+			"tabCtrl",
+			"languages already loaded",
+			"resourceOpen",
+			"IDNT",
+			"settings.languages",
+			"IDNT",
+			"id_nt",
+			"197.249.62.157",
+			"129.232.190.202",
+			"197.219.32.151",
+			"192.168.10.0/24",
+			"My Company",
+			"username",
+			"connectionString",
+			"$connection",
+			"download_counter",
+			"LinkAllBehavior",
+			"api.fontedavida.org",
+			"Apply Now",
+			"hit",
+			"col col-sm-3",
+			"flag-2x",
+			"  ",
+			"biblia.co.mz",
+			"display",
+			"sermons",
+			"$",
+			"biblia.co.mz",
+			"fontedavida",
+			"--",
+			"biblia.co.mz"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"message.console",
+			",\\n",
+			",/n",
+			"config-file",
+			"qualifier",
+			"197.249.87.98",
+			"197.249.62.157",
+			"129.232.190.202",
+			"197.219.32.151",
+			"dev_api.fontedavida.org",
+			"button button-assertive icon-top",
+			"flag-4x",
+			"git branch -D ",
+			"jQuery",
+			"fontedavida.org",
+			"</div>",
+			"<div",
+			"window.ga.trackEvent",
+			"window.ga.trackView",
+			"window.ga.trackEvent",
+			"jpg",
+			"http://fontedavida.org/images/team",
+			"images/team/"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"folders":
+	[
+		{
+			"path": "C:\\wamp\\www\\fonte"
+		}
+	],
+	"groups":
+	[
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "hooks/after_prepare/030_android_manifest_changes.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1590,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1589,
+								1590
+							]
+						],
+						"settings":
+						{
+							"origPos":
+							[
+								0.0,
+								302.0
+							],
+							"syncScroll": false,
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 302.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "config.xml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 8142,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								256,
+								256
+							]
+						],
+						"settings":
+						{
+							"origPos":
+							[
+								0.0,
+								1679.0
+							],
+							"syncScroll": false,
+							"syntax": "Packages/XML/XML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "www/index.html",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 9296,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2690,
+								2729
+							]
+						],
+						"settings":
+						{
+							"origPos":
+							[
+								0.0,
+								1119.0
+							],
+							"syncScroll": false,
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1119.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 3,
+					"file": "platforms/android/AndroidManifest.xml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3459,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3321,
+								3333
+							]
+						],
+						"settings":
+						{
+							"origPos":
+							[
+								0.0,
+								776.0
+							],
+							"syncScroll": false,
+							"syntax": "Packages/XML/XML.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 28.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.54472622734,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.doc":
+	{
+		"height": 0.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "",
+	"replace":
+	{
+		"height": 80.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 490.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 874.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 290.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

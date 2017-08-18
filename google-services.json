@@ -1,0 +1,45 @@
+{
+  "project_info": {
+    "project_number": "526623142306",
+    "firebase_url": "https://fonte-da-vida.firebaseio.com",
+    "project_id": "fonte-da-vida",
+    "storage_bucket": "fonte-da-vida.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:526623142306:android:40d6b41e2d0a5b85",
+        "android_client_info": {
+          "package_name": "com.equipmozambique.fontedavida"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "526623142306-jkm9aiu458hstjogmqo5dm4ejbt1b0rl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJGbrARP1zmU6cnsc7i474g1Q0gbopuvg"
+        },
+        {
+          "current_key": "AIzaSyAp6AxyweecU7Z0JCH-L7XwC5L3xUU7xks"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
