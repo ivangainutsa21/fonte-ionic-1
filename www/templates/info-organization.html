@@ -1,0 +1,19 @@
+<!--Organization Section-->
+        <a class="item item-divider item-icon-right" href="#/tab/{{page}}/org-{{src.organization.id}}">
+            <!--<i class="icon ion-edit"></i>-->
+            <i class="icon ion-chevron-right icon-right"></i>
+            <div class=item-icon-left><i class="icon ion-ios-world-outline"></i>{{'ORGANIZATION' | translate}}
+                <h2 ng-if="settings.lang == 'en'" style="font-size:120%; font-style:italics">{{src.organization.en_name}}</h2>
+                <h2 ng-if="settings.lang == 'pt'" style="font-size:120%; font-style:italics">{{src.organization.pt_name}}</h2>
+            </div>
+        </a>
+        <div class="row">
+            <div class="col col-33"><img class="detail-image" src="{{src.organization.photo}}"/>
+            </div>
+            <div ng-if="settings.lang == 'en'" class="float:left" ng-bind-html="src.organization.en_description | limitTo:wordLength">
+
+            </div>
+            <div ng-if="settings.lang == 'pt'" class="float:left" ng-bind-html="src.organization.pt_description | limitTo:wordLength">
+
+            </div>
+        </div>

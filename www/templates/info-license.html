@@ -1,0 +1,23 @@
+<!--License Section-->
+    <div class="info-license">    
+        <a class="item item-divider item-icon-right">
+            <div class=item-icon-left><i class="icon ion-ios-list-outline"></i>{{'LICENSE' | translate}}
+            <h2 ng-if="settings.lang == 'en'" style="font-size:120%; font-style:italics">{{src.license.en_license_name}}</h2>
+            <h2 ng-if="settings.lang == 'pt'" style="font-size:120%; font-style:italics">{{src.license.pt_license_name}}</h2>
+            <h2 ng-if="settings.lang == 'fr'" style="font-size:120%; font-style:italics">{{src.license.fr_license_name}}</h2>
+            </div>
+        </a>
+        <div class="row">
+            <div class="col col-33"><img src="{{src.license.img_url}}" style="width:100%"/>
+            </div>
+            <div ng-if="settings.lang == 'en'">
+                {{src.license.en_description}}
+            </div>
+            <div ng-if="settings.lang == 'pt'">
+                {{src.license.pt_description}}
+            </div>
+            <div ng-if="settings.lang == 'fr'">
+                {{src.license.fr_description}}
+            </div>
+        </div>
+    </div>

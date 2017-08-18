@@ -1,0 +1,27 @@
+<ion-view view-title="{{'COPYRIGHT' | translate}}">
+  <ion-content on-swipe-left="goToStart()" class="about-page">
+  <ion-item class="item-text-wrap">
+    <div class="item item-divider">{{'COPYRIGHT_FORM' | translate}}</div>
+    <form name="copyright" ng-submit="form.sendMail(copyright, 'copyright')">
+      <label class="item item-input">
+          <input type="text" name="name" placeholder="{{'NAME' | translate}}" required>
+      </label>
+      <label class="item item-input">
+        <input type="email" name="email" placeholder="E-mail" required>
+      </label>
+      <label class="item item-input">
+          <input type="text" name="organization" placeholder="{{'ORGANIZATION' | translate}}" required>
+      </label>
+      <label class="item item-input">
+        <input type="text" name="teaching" placeholder="{{'TEACHING_FILED' | translate}}" required>
+      </label>
+      <label class="item item-input">
+        <input type="textarea" name="issue" placeholder="{{'COPYRIGHT_DETAIL' | translate}}" required></input>
+      </label>
+      <div class="padding">
+        <button class="button button-block button-positive" type="submit">{{'SUBMIT' | translate}}</button>
+      </div>
+    </form>
+  </ion-item>
+  </ion-content>
+</ion-view>

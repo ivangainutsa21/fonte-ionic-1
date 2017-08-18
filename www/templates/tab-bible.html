@@ -1,0 +1,35 @@
+<ion-view view-title="{{'BIBLE_HEADER' | translate}}">
+  <header-bar></header-bar>
+
+  <ion-content on-swipe-left="goForward()">
+    <div class="waiting"><ion-spinner></ion-spinner></div>
+    <div class="padding small">
+      <ion-list class="testament-show" ng-if="settings.rLanguage.IDOT != 0">
+          
+          <ion-radio ng-model="settings.testament" ng-value="'IDNT'" class="">{{'BIBLE_NT' | translate}}</ion-radio>
+          <ion-radio ng-model="settings.testament" ng-value="'IDOT'">{{'BIBLE_OT' | translate}}</ion-radio>
+      </ion-list>
+    </div>
+    <ion-list ng-if="(settings.rLanguage.IDNT != 0) || (settings.rLanguage.IDOT != 0)">
+      <h3 class="padding">{{'BIBLE_BOOKS' | translate}}</h3>
+      
+        <ion-item ng-if="settings.lang === 'en'" ng-repeat='book in books | filter : {bookEN: search_query}' class="item-icon-right item-thumbnail-left bible-books" type="item-text-wrap" href="#/tab/bible/{{book.Index}}/{{book.bookEN}}/{{book.bookCode}}">
+          <img class="bible-img" src="images/speakers/bible.png" />
+          <h2>{{book.bookEN}}</h2>
+          
+          <i class="icon ion-chevron-right icon-accessory"></i>
+        </ion-item>
+        <ion-item ng-if="settings.lang === 'pt'" ng-repeat='book in books | filter : {bookPT: search_query}' class="item-icon-right item-thumbnail-left bible-books" type="item-text-wrap" href="#/tab/bible/{{book.Index}}/{{book.bookPT}}/{{book.bookCode}}">
+          <img class="bible-img" src="images/speakers/bible.png" />
+          <h2>{{book.bookPT}}</h2>
+              
+          <i class="icon ion-chevron-right icon-accessory"></i>
+        </ion-item>
+    </ion-list>
+    <ion-list ng-if="(settings.rLanguage.IDNT == 0) && (settings.rLanguage.IDOT == 0)"  class="nothing-box item-note">
+    <div class="icon ion-android-remove-circle assertive icon-large" style="font-size: 48px; text-align: center"></div>
+      <h2>{{'NO_AUDIO_BIBLE' | translate}}</h2>
+      <p>{{'TRY_AGAIN' | translate}}</p>
+    </ion-list>
+  </ion-content>
+</ion-view>

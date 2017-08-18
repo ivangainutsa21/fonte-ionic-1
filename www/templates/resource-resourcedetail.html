@@ -1,0 +1,52 @@
+<ion-view view-title="{{'ABOUT_RESOURCE' | translate}}">
+<ion-content class='resource-description'>
+    <div class="waiting"><ion-spinner></ion-spinner></div> 
+    <ion-item class="item-text-wrap">
+
+    <div class="padding-bottom padding-left">
+        <h2 ng-if="settings.lang == 'en'" style="font-size:130%; font-style:italics; font-weight:bold">{{src.resource.en_name}}</h2>
+        <h2 ng-if="settings.lang == 'pt'" style="font-size:130%; font-style:italics; font-weight:bold">{{src.resource.pt_name}}</h2>
+    </div>
+    <div class="row">
+        <div ng-if="settings.lang == 'en'" class="padding item-text-wrap">{{src.resource.en_description}}</div>
+        <div ng-if="settings.lang == 'pt'" class="padding item-text-wrap">{{src.resource.pt_description}}</div>
+        <div class="col col-33 col-bottofm" style="float:right">
+            <button class="button button-calm icon-left ion-document-text" ng-click="resourceOpen(src.resource)" style="position:relative;left:3vw;">{{'OPEN' | translate}}</button>
+        </div>
+    </div> 
+    
+    <div style="margin:1vh 20px 0 0;">
+        <dwn-button class="calm" ng-hide="src.resource.fileUrlLocalPath" value="{{src.resource}}" case-compare="resources" style="margin-top: -30px;font-size: 350%;margin-right:20px;"></dwn-button>
+        
+        <!-- Maybe next version. For now we are taking out the social sharing icons -->
+        <!--         <i class="icon ion-email social-link-button" onclick="var instance = new SocialSharing(); instance.shareViaEmail('Message', 'Subject', 'benf31@outlook.com');"></i>
+        <i class="icon ion-android-textsms social-link-button" onclick="var instance = new SocialSharing(); instance.shareViaSMS("test", '');"></i>
+        <i class="icon ion-social-whatsapp social-link-button" onclick="var instance = new SocialSharing(); instance.shareViaWhatsApp('Digital Signature Maker', null, 'https://play.google.com/store/apps/details?id=com.prantikv.digitalsignaturemaker', null, function(errormsg){alert('Error: Cannot Share');}"></i> -->
+    </div>
+        <!--Language Section-->
+        
+        <a class="item item-icon-left" style="border: none">
+            <i class="icon ion-android-globe"></i>
+            {{'LANGUAGE' | translate}}
+            <span class="item-note" ng-if="settings.lang == 'en'">{{settings.languages[src.resource.primary_language_id].en_language}} <i ng-if="src.resource.secondary_language_id">/</i> {{settings.languages[src.resource.secondary_language_id].en_language}}</span> 
+            <span class="item-note" ng-if="settings.lang == 'pt'">{{settings.languages[src.resource.primary_language_id].pt_language}} <i ng-if="src.resource.secondary_language_id">/</i> {{settings.languages[src.resource.secondary_language_id].pt_language}}</span>
+            <span class="item-note" ng-if="settings.lang == 'fr'">{{settings.languages[src.resource.primary_language_id].fr_language}} <i ng-if="src.resource.secondary_language_id">/</i> {{settings.languages[src.resource.secondary_language_id].fr_language}}</span>
+        </a>
+
+        <info-teacher ng-if="src.teacher.id !== 3" ></info-teacher>
+        
+        <info-organization></info-organization>
+        
+        <info-license></info-license>
+
+            <!--<a href="#/tab/resources"><button>< voltar</button></a>-->
+            
+            </div>
+            <button class="button button-large button-block button-calm icon-left ion-ios-download" ng-click="dl.resourceDl(src.resource)" ng-controller="DlCtrl as dl" style="display:none">{{'DOWNLOAD' | translate}}
+                </button>
+            <button class="button button-block button-large button-calm icon-left ion-document-text" ng-click="resourceOpen(src.resource)">{{'OPEN' | translate}}
+                </button>
+            
+        </ion-item>
+</ion-content>
+</ion-view>

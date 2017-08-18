@@ -1,0 +1,50 @@
+<ion-view view-title="{{'TAB_VIDEOS' | translate}}">
+  
+
+  <ion-content class="about-page">
+    <ion-item ng-repeat="video in grnVideos" class="amazingaudioplayer-card" ng-click="runVideo(video.mp4_url)">
+
+            <div class="title-upper">
+                <h2>"{{video.title}}"</h2>
+                <p>"{{video.description}}"</p>
+            </div>
+
+            <div class="preacher-img" style="background-image:url({{video.pic_url}})">
+                <!-- <img ng-src="{{org_photo}}" class="org-img"/> -->
+            </div>
+            
+            <div class="title-lower">
+                <h2>"{{video.title}}"</h2>
+                <p>"{{video.description}}"</p>
+            </div>
+
+            <a href="">
+    </ion-item>
+
+    <ion-item ng-repeat="video in settings.videos" class="amazingaudioplayer-card" ng-click="runVideo(video.mp4_url)">
+
+            <div class="title-upper">
+                <h2>"{{video.title}}"</h2>
+                <p>"{{video.description}}"</p>
+            </div>
+
+            <div class="preacher-img" style="background-image:url({{video.pic_url}})">
+                <!-- <img ng-src="{{org_photo}}" class="org-img"/> -->
+            </div>
+            
+            <div class="title-lower">
+                <h2>"{{video.title}}"</h2>
+                <p>"{{video.description}}"</p>
+            </div>
+
+            <a href="">
+    </ion-item>
+    
+    <ion-item class="item-text-wrap item-content">
+            <a class="button button-block button-large icon-left ion-ios-videocam" ng-click="runVideo('https://5fish.mobi/S82357/mp4/S82357.mp4')" > VIDEO TEST
+      </a>
+    </ion-item>
+    {{videos}}
+
+  </ion-content>
+</ion-view>

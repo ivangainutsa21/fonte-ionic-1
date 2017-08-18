@@ -1,0 +1,53 @@
+
+<ion-view view-title="{{'ABOUT_TEACHING' | translate}}">
+    <ion-content class='resource-description'>
+        <div class="waiting"><ion-spinner></ion-spinner></div> 
+        <ion-item class="item-text-wrap">
+
+        <!-- Title -->
+        <div class="padding-bottom padding-left">
+            <h2 ng-if="settings.lang == 'en'" style="font-size:130%; font-style:italics; font-weight:bold">{{src.teaching.en_title}}</h2>
+            <h2 ng-if="settings.lang == 'pt'" style="font-size:130%; font-style:italics; font-weight:bold">{{src.teaching.pt_title}}</h2>
+        </div>
+
+                <!--Language Section-->
+        <div class="row">
+            <div class="col col-50">
+            <a class="item item-icon-left" style="border: none">
+                <i class="icon ion-android-globe"></i>
+                {{'LANGUAGE' | translate}}
+                <span class="item-note" ng-if="settings.lang == 'en'">{{settings.languages[src.teaching.primary_language_id].en_language}} <i ng-if="src.teaching.secondary_language_id">/</i> {{settings.languages[src.teaching.secondary_language_id].en_language}}</span> 
+                <span class="item-note" ng-if="settings.lang == 'pt'">{{settings.languages[src.teaching.primary_language_id].pt_language}} <i ng-if="src.teaching.secondary_language_id">/</i> {{settings.languages[src.teaching.secondary_language_id].pt_language}}</span>
+            </a>
+            </div>
+            <div class="col col-50">
+                <button class="button button-calm icon-left ion-ios-play" ng-click="playNow(src.teaching, src.teacher)" style="position:relative;left:3vw;">{{'PLAY' | translate}}</button>
+            </div>
+        </div>
+        
+        <div style="margin:1vh 20px 0 0;">
+            <dwn-button class="calm" ng-hide="src.teaching.fileUrlLocalPath" value="{{src.teaching}}" case-compare="sermons" style="margin-top: -30px;font-size: 350%;margin-right:20px;"></dwn-button>
+            
+            <!-- Social Sharing buttons - for sometime in the future -->
+            <!-- <i class="icon ion-email social-link-button" onclick="var instance = new SocialSharing(); instance.shareViaEmail('Message', 'Subject', 'benf31@outlook.com');"></i>       
+            <i class="icon ion-android-textsms social-link-button" onclick="var instance = new SocialSharing(); instance.shareViaSMS('Test SMS', '');"></i>
+            <i class="icon ion-social-whatsapp social-link-button" onclick="var instance = new SocialSharing(); instance.shareViaWhatsApp('Digital Signature Maker', null, 'https://play.google.com/store/apps/details?id=com.prantikv.digitalsignaturemaker', null, function(errormsg){alert('Error: Cannot Share');}"></i> -->
+        </div>
+        
+        <!-- Only show if the teacher is not "various authors" -->
+        <info-teacher ng-if="src.teacher.id !== 3" style="margin-top:5px;"></info-teacher>
+        
+        <info-organization></info-organization>
+        
+        <info-license></info-license>
+            <!--<a href="#/tab/resources"><button>< voltar</button></a>-->
+            
+            </div>
+            <button class="button button-large button-block button-calm icon-left ion-ios-download" ng-click="dl.resourceDl(src.resource)" ng-controller="DlCtrl as dl" style="display:none">{{'DOWNLOAD' | translate}}
+                </button>
+            <button class="button button-block button-large button-calm icon-left ion-ios-play" ng-click="playNow(src.teaching, src.teacher)">{{'PLAY' | translate}}
+                </button>
+            
+        </ion-item>
+    </ion-content>
+</ion-view>

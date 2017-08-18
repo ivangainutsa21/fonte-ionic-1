@@ -1,0 +1,22 @@
+
+<ion-view view-title="{{'SERMONS_ABOUT_SPEAKER' | translate}}">
+<ion-content>
+    <ion-list class="list-inset fonte-description">
+        <ion-item class="item-text-wrap description-div">
+            <div style="display:none">{{teacher = (settings.speakerList | filter : {id: whichSpeaker})[0];
+            org = (settings.orgList | filter : {id: teacher.organization_id})[0];}}</div>
+            <img ng-src="{{teacher.photo}}"/>
+            <h2 ng-if="settings.lang =='en'">{{teacher.en_name}}</h2>
+            <h2 ng-if="settings.lang =='pt'">{{teacher.pt_name}}</h2>
+            <h2 ng-if="settings.lang =='fr'">{{teacher.fr_name}}</h2>
+            <a href="#/tab/teaching/org-{{teacher.organization_id}}" ng-if="settings.lang =='en'"><button><h3>{{org.en_name}}</h3></button></a>
+            <a href="#/tab/teaching/org-{{teacher.organization_id}}" ng-if="settings.lang =='pt'"><button><h3>{{org.pt_name}}</h3></button></a>
+            <a href="#/tab/teaching/org-{{teacher.organization_id}}" ng-if="settings.lang =='fr'"><button><h3>{{org.fr_name}}</h3></button></a>
+            <br /><br />
+            <p ng-if="settings.lang =='en'" ng-bind-html="teacher.en_description"></p>
+            <p ng-if="settings.lang =='pt'" ng-bind-html="teacher.pt_description"></p>
+            <p ng-if="settings.lang =='fr'" ng-bind-html="teacher.fr_description"></p>
+        </ion-item>
+    </ion-list>
+</ion-content>
+</ion-view>

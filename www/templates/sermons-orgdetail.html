@@ -1,0 +1,17 @@
+
+<ion-view view-title="{{'SERMONS_ABOUT_ORG' | translate}}">
+<ion-content>
+    <ion-list class="list-inset fonte-description">
+        <ion-item class="item-text-wrap description-div">
+        <div style="display:none">{{org = (settings.orgList | filter : {id: whichOrg})[0];}}</div>
+            <img ng-src="{{org.photo}}" />
+            <h2 ng-if="settings.lang =='en'">{{org.en_name}}</h2>
+            <p ng-if="settings.lang =='en'" ng-bind-html="org.en_description"></p>
+            <h2 ng-if="settings.lang =='pt'">{{org.pt_name}}</h2>
+            <p ng-if="settings.lang =='pt'" ng-bind-html="org.pt_description"></p>
+            <h2 ng-if="settings.lang =='fr'">{{org.fr_name}}</h2>
+            <p ng-if="settings.lang =='fr'" ng-bind-html="org.fr_description"></p>
+        </ion-item>
+    </ion-list>
+</ion-content>
+</ion-view>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <meta http-equiv="Content-Security-Policy" content="default-src *; script-src 'self' 'unsafe-inline' 'unsafe-eval' *; style-src  'self' 'unsafe-inline' *">
+      
+    <title></title>
+
+    <link href="css/loading-bar.css" rel="stylesheet">
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/flag-css.min.css" rel="stylesheet">
+    <link href="css/angular-player.css" rel="stylesheet">
+    <link href="lib/ionic-filter-bar/dist/ionic.filter.bar.min.css" rel="stylesheet">  
+
+    <!-- ionic/angularjs js -->  
+    <script src="js/jquery-2.2.2.min.js"></script>
+    <script src="lib/ionic/js/ionic.bundle.min.js"></script>
+    
+    <!-- Translation Files -->
+    <script type="text/javascript" src="lib/angular-translate/angular-translate.min.js"></script>
+    <script src="lib/angular-translate-loader-url/angular-translate-loader-url.min.js"></script>
+    <script type="text/javascript" src="lib/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js"></script>
+    <script src="lib/angular-sanitize/angular-sanitize.min.js"></script>
+    
+    <script src="translation/angular-locale_pt.min.js"></script>
+    <script src="translation/angular-locale_en.min.js"></script>
+    
+    <script src="lib/ngCordova/dist/ng-cordova.min.js"></script>
+    <script src="lib/ionic-platform-web-client/dist/ionic.io.bundle.min.js"></script>
+    <script src="lib/ionic-filter-bar/dist/ionic.filter.bar.min.js"></script>
+    <script src="js/ngStorage.min.js"></script> 
+    <script src="js/ng-FitText.min.js"></script> 
+    <script src="js/loading-bar.min.js"></script> 
+    
+    
+    <script src="lib/videogular/videogular.js"></script>
+    <script src="lib/videogular-controls/vg-controls.js"></script>
+    <script src="lib/videogular-buffering/vg-buffering.js"></script>
+    <script src="lib/videogular-overlay-play/vg-overlay-play.js"></script>
+    <script src="lib/videogular-poster/vg-poster.js"></script>
+
+  <!-- <script src="cordova.js"></script> -->
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+    <script src="js/page-controllers.js"></script>
+    <script src="js/main-controllers.js"></script>
+    <script src="js/directives.js"></script>
+    <script src="js/filters.js"></script>
+    <script src="js/services.js"></script>
+
+    <script src="js/firebase.js"></script>
+    <script src="js/firebase-messaging.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyBSPjrd43ZpZ3ajk0Xh-OYegR44naMiD70",
+        authDomain: "fonte-da-vida.firebaseapp.com",
+        databaseURL: "https://fonte-da-vida.firebaseio.com",
+        projectId: "fonte-da-vida",
+        storageBucket: "fonte-da-vida.appspot.com",
+        messagingSenderId: "526623142306"
+      };
+      firebase.initializeApp(config);
+      const messaging = firebase.messaging();
+    </script>
+
+  </head>
+    <body ng-app="starter">
+  
+    <!-- Settings side menu begins here -->
+
+    <ion-side-menus ng-controller="MainCtrl" ng-cloak>
+      <ion-side-menu-content>
+        <ion-nav-bar class="bar-positive" ng-controller="headerCtrl">
+          <ion-nav-back-button></ion-nav-back-button>
+          <ion-nav-buttons side="left">
+            <button class="button icon button-icon ion-navicon" menu-toggle="left"></button>
+          </ion-nav-buttons>
+          <ion-nav-buttons side="right" ng-show="network-button">
+            <button class="button icon button-icon ion-alert-circled" ng-hide="networkButton" ng-click="networkAlert()" style="color:yellow"></button>
+          </ion-nav-buttons>
+        </ion-nav-bar>
+        <ion-nav-view></ion-nav-view>
+      </ion-side-menu-content>
+      <ion-side-menu side="left" ng-controller="SettingsCtrl">
+
+        <!-- Header Bar -->
+        <ion-header-bar class="bar-calm">
+          <h1 class="title">Fonte da Vida {{appVersion}}</h1>
+        </ion-header-bar>
+        <ion-content>
+          <ion-list>
+<!-- Settings Section -->
+            <div class="item item-divider item-icon-left">
+              <i class = "icon ion-ios-gear"></i>
+              {{'SETTINGS_TITLE' | translate}}
+            </div>
+            <label class="item item-input item-select">
+              <div class="input-label item-text-wrap">
+                <h3>{{'SELECT_COUNTRY' | translate}}</h3>
+              </div>
+
+              <select ng-model="settings.country" ng-options="country.id as country.native_name for country in settings.countries" ng-change="changedCountry(country)">
+                <!-- <option ng-repeat="country in settings.countries" value="{{country.id}}">{{country.native_name}}</option> -->
+              </select>
+            </label>             
+
+            <!-- Language Choice -->
+            <label class="item item-input item-select">
+              <div class="input-label item-text-wrap">
+                <h3>{{'SETTINGS_CLANGUAGE' | translate}}</h3>
+              </div>
+              <select ng-change="changeLanguage(settings.lang)"  ng-model="settings.lang">
+                <option value="pt" label="{{'SETTINGS_PT' | translate}}">{{'SETTINGS_PT' | translate}}</option>
+                <option value="en" label="{{'SETTINGS_EN' | translate}}">{{'SETTINGS_EN' | translate}}</option>
+
+              </select>
+            </label> 
+
+            <!-- Select Resource Language list -->
+            <label class="item item-input item-select" ng-controller="RLangCtrl">
+              <div class="input-label item-text-wrap">
+                <h3>{{'RESOURCE_LANGUAGE' | translate}}</h3>
+              </div>
+              
+              <select ng-model="settings.rLanguageid"
+                ng-options="language.id as language.title for language in languages"
+                
+                >
+              </select>
+
+              <!-- <select ng-options="language.{{settings.lang}}_language for language in languages" ng-model="settings.rLanguage" ng-value='settings.rLanguage.{{settings.lang}}_language' ng-init="settings.languages[settings.rLanguage.id]">
+              </select> 
+
+              
+                <option ng-repeat="language in languages" value="{{language.id}}" ng-selected="settings.rLanguageid == language.id">{{language.title}}</option>
+              -->
+              
+            </label>
+            <!-- Organizations -->
+              <a class="item item-icon-left item-icon-right settings-sections" menu-toggle="left" href="#/info/orglist" ng-click="settings_analytics('Organizations')">
+                <i class="icon ion-ios-briefcase-outline"></i>
+                {{'TAB_ORGANIZATIONS' | translate}}
+                <i class="icon ion-arrow-right-c"></i>
+              </a>
+
+            <!-- Get Involved -->
+            <div class="item item-divider item-icon-left settings-list">
+              <i class = "icon ion-person-add"></i>
+              {{'TAB_GET' | translate}}
+            </div>
+
+            <div class="list settings-sections">
+            <!-- Become a Partner -->
+            <a class="item item-icon-left" href="#/info/partner" menu-toggle="left" ng-click="settings_analytics('become_partner')" >
+              <i class="icon ion-android-contacts"></i>
+              {{'TAB_BECOME' | translate}}
+            </a>
+            <!-- Send a Friend -->
+                <!-- <a class="item item-icon-left" href="#/info/friend" menu-toggle="left" ng-click="settings_analytics('send_friend')">
+                  <i class="icon ion-ios-paperplane"></i>
+                  {{'TAB_SEND_FRIEND' | translate}}
+                </a> -->
+                <!-- More Ways -->
+                <!-- <a class="item item-icon-left" href="#/info/help" menu-toggle="left" ng-click="settings_analytics('more_ways')">
+                  <i class="icon ion-plus-round"></i>
+                  {{'TAB_MORE_WAYS' | translate}}
+                </a> -->
+              </div>
+<!-- More Information -->
+              <div class="item item-divider item-icon-left settings-list">
+                <i class = "icon ion-information-circled"></i>
+                {{'TAB_MORE_INFO' | translate}}
+              </div>
+              <!-- About the App -->
+              <div class="list settings-sections">
+                <a class="item item-icon-left" href="#/info/about" menu-toggle="left">
+                  <i class="icon ion-iphone"></i>
+                  {{'TAB_ABOUT' | translate}}
+                </a>
+                <!-- Privacy Policy -->
+                <a class="item item-icon-left" href="#/info/privacy" menu-toggle="left">
+                  <i class="icon ion-ios-locked"></i>
+                  {{'TAB_PRIVACY' | translate}}
+                </a>
+                <!-- About the Team -->
+                <a class="item item-icon-left" href="#/info/team" menu-toggle="left">
+                  <i class="icon ion-ios-people"></i>
+                  {{'TAB_TEAM' | translate}}
+                </a>
+
+
+              </div>             
+          </ion-list>
+        </ion-content>
+      </ion-side-menu>
+    </ion-side-menus>
+    <!-- End of Settings side menu -->
+
+    <videogular-player></videogular-player>
+  </body>
+</html>

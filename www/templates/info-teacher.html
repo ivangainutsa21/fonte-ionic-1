@@ -1,0 +1,23 @@
+        <!--Author Section-->
+        <a class="item item-divider item-icon-right" href="#/tab/{{page}}/speaker-{{src.teacher.id}}">
+            <i class="icon ion-chevron-right icon-right"></i>
+            <div class="item-icon-left">
+                <div ng-if="page == 'resource'"><i class="icon ion-edit"></i>{{'AUTHOR' | translate}}</div>
+                <div ng-if="page == 'teaching'"><i class="icon ion-mic-b"></i>{{'PREACHER' | translate}}</div>
+            <h2 ng-if="settings.lang == 'en'" style="font-size:120%; font-style:italics">{{src.teacher.en_name}}</h2>
+            <h2 ng-if="settings.lang == 'pt'" style="font-size:120%; font-style:italics">{{src.teacher.pt_name}}</h2>
+            </div>
+        </a>
+        <div class="row">
+            <div class="col col-33"><img class="detail-image" ng-src="{{src.teacher.photo}}" />
+            </div>
+            <div ng-if="settings.lang == 'en'" style="overflow:hidden" ng-bind-html="src.teacher.en_description | limitTo:wordLength">
+                
+            </div>
+            <div ng-if="settings.lang == 'pt'" style="overflow:hidden" ng-bind-html="src.teacher.pt_description | limitTo:wordLength">
+                
+            </div>
+            <div ng-if="settings.lang == 'pt'" style="overflow:hidden" ng-bind-html="src.teacher.fr_description | limitTo:wordLength">
+                
+            </div>
+        </div>

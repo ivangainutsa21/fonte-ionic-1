@@ -1,0 +1,14 @@
+{
+  "name": "ga-localstorage",
+  "homepage": "https://github.com/ggendre/GALocalStorage",
+  "_release": "433807ef93",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "433807ef9358e0a9d977ae86ab16164bed1e866a"
+  },
+  "_source": "https://github.com/ggendre/GALocalStorage.git",
+  "_target": "*",
+  "_originalSource": "ga-localstorage",
+  "_direct": true
+}

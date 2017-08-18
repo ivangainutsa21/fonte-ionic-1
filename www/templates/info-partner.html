@@ -1,0 +1,31 @@
+<ion-view view-title="{{'PARTNERSHIP' | translate}}">
+  <ion-content on-swipe-left="goToStart()" class="about-page">
+  <ion-item class="item-text-wrap">
+    <div class="item item-divider">{{'PARTNERSHIP_INFORMATION' | translate}}</div>
+    <form name="partnership" ng-submit="form.sendMail(partnership, 'partnership')">
+      <label class="item item-input">
+          <input type="text" name="name" placeholder="{{'NAME' | translate}}" required>
+      </label>
+      <label class="item item-input">
+        <input type="email" name="email" placeholder="E-mail" required>
+      </label>
+      <label class="item item-input">
+          <input type="text" name="organization" placeholder="{{'ORGANIZATION' | translate}}" required>
+      </label>
+      <label class="item item-input">
+        <input type="tel" name="phone" placeholder="{{'PHONE' | translate}}" required>
+      </label>
+      <label class="item item-input">
+        <input type="text" name="languages" placeholder="{{'LANGUAGES_AVAILABLE' | translate}}" required>
+      </label>
+      <label class="item item-input">
+        <textarea rows="4" name="details" placeholder="{{'ORGANIZATION_DETAILS' | translate}}" required></textarea>
+      </label>
+      <div class="item item-divider bar-assertive">{{'IMPORTANT_NOTICE' | translate}} <a href="http://api.fontedavida.org/license.html">{{'HERE' | translate}}</a></div>
+      <div class="padding">
+        <button class="button button-block button-positive" type="submit">{{'AGREE' | translate}}</button>
+      </div>
+    </form>
+  </ion-item>
+  </ion-content>
+</ion-view>

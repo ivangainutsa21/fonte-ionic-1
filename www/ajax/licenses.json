@@ -1,0 +1,34 @@
+[
+  {
+    "id":1,
+    "en_license_name": "Creative Commons Attribution",
+    "pt_license_name": "Creative Commons Atribuição",
+    "en_description": "This license lets others distribute, remix, tweak, and build upon your work, even commercially, as long as they credit you for the original creation. This is the most accommodating of licenses offered. Recommended for maximum dissemination and use of licensed materials.",
+    "pt_description": "Esta licença permite que outros distribuam, remixem, adaptem e criem a partir do seu trabalho, mesmo para fins comerciais, desde que lhe atribuam o devido crédito pela criação original. É a licença mais flexível de todas as licenças disponíveis. É recomendada para maximizar a disseminação e uso dos materiais licenciados.",
+    "img_url": "images/licenses/ccby.png" 
+  },
+  {
+    "id":2,
+    "en_license_name": "Creative Commons Attribution No-Derivs",
+    "pt_license_name": "Creative Commons Atribuição-SemDerivações",
+    "en_description": "This license allows for redistribution, commercial and non-commercial, as long as it is passed along unchanged and in whole, with credit to you.",
+    "pt_description": "Esta licença permite a redistribuição, comercial e não comercial, desde que o trabalho seja distribuído inalterado e no seu todo, com crédito a si.",
+    "img_url": "images/licenses/ccbynd.png" 
+  },
+  {
+    "id":3,
+    "en_license_name": "Creative Commons Attribution Non-commercial",
+    "pt_license_name": "Creative Commons Atribuição-NãoComercial",
+    "en_description": "This license lets others remix, tweak, and build upon your work non-commercially, and although their new works must also acknowledge you and be non-commercial, they don’t have to license their derivative works on the same terms.",
+    "pt_description": "Esta licença permite que outros remisturem, adaptem e criem a partir do seu trabalho para fins não comerciais, e embora os novos trabalhos tenham de lhe atribuir o devido crédito e não possam ser usados para fins comerciais, eles não têm de licenciar esses trabalhos derivados ao abrigo dos mesmos termos.",
+    "img_url": "images/licenses/ccbync.png" 
+  },
+  {
+    "id":4,
+    "en_license_name": "Creative Commons Attribution NonCommercial-NoDerivs",
+    "pt_license_name": "Creative Commons Atribuição-NãoComercial-SemDerivações",
+    "en_description": "This license is the most restrictive of our six main licenses, only allowing others to download your works and share them with others as long as they credit you, but they can’t change them in any way or use them commercially.",
+    "pt_description": "Esta é a mais restritiva das nossas seis licenças principais, só permitindo que outros façam download dos seus trabalhos e os compartilhem desde que lhe sejam atribuídos a si os devidos créditos, mas sem que possam alterá-los de nenhuma forma ou utilizá-los para fins comerciais.",
+    "img_url": "images/licenses/ccbyncnd.png" 
+  }
+]

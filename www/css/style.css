@@ -1,0 +1,664 @@
+.j-padding img, .j-padding h2, .j-padding p, .j-padding .preacher-img {
+	margin-left:35px;
+}
+
+/*Accordion CSS for the Partnership and Downloads Pages*/
+.list .item.item-accordion {
+  line-height: 38px;
+  padding-top: 0;
+  padding-bottom: 0;
+  transition: 0.09s all linear;
+}
+.list .item.item-accordion.ng-hide {
+  line-height: 0px;
+}
+.list .item.item-accordion.ng-hide-add,
+.list .item.item-accordion.ng-hide-remove {
+  display: block !important;
+}
+
+/*Ng Cloak addition*/
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+	display: none !important;
+}
+
+
+.settings-list {
+	margin-bottom:0px;
+}
+
+.fonte-logo {
+	position: absolute;
+	height:100%;
+	width: 100%;
+	background: url(../images/fonte-loading.png) no-repeat center 50%;
+}
+
+.country-header {
+	color:white;
+	text-align:center;
+}
+
+.country-list {
+	background-color:rgba(255,255,255,.6);
+	padding: 10px;
+	border-radius: 10px;
+}
+
+.flag-div {
+	width:50%;
+	margin: 0px;
+	float:left;
+
+}
+
+.flag-inner {
+	margin:5px;
+	padding:5px;
+	text-align: center;
+	/*background-color: #11c1f3;*/
+	border-radius: 10px;
+	color:white;
+}
+
+.flag-div.activated {
+	background-color: #087796;
+}
+
+.flag-div h3 {
+	line-height: 14px;
+}
+
+.flag-div span {
+	display:block;
+	margin: 0 auto;
+	margin-top: 10px;
+	border-radius: 15px;
+	background-size: cover;
+}
+
+.search-div {
+	width: 100%;
+}
+
+.language-header-div {
+	min-width: 120px;
+}
+
+.country-name-long {
+	margin-top: 8px;
+	margin-bottom: 8px;
+}
+
+.description-div {
+	min-height: 175px;
+}
+
+.info-license img {
+	max-width: 150px;
+}
+
+.settings-sections, a.settings-sections {
+	color: #5e5e5e;
+}
+
+.settings-sections a i, a.settings-sections i {
+	margin-left:2%;
+}
+
+.list-checkbox {
+	background-color: transparent;
+	border: none;
+
+}
+
+.menu-left .button-full{
+	margin: 0px;
+}
+
+
+.splash {
+	background: url(../images/P6z1qnt.jpg) no-repeat fixed;
+	background-position: 40% 50%;
+	-webkit-background-size:cover;
+	-moz-background-size:cover;
+	-o-background-size:cover;
+	background-size: cover;
+
+}
+
+.player-close-button {
+	float: right;
+	position: relative;
+	padding: 5px;
+	z-index: 1000;
+}
+
+videogular.videogular-container.audio {
+	width: 100%;
+}
+
+.tab-overlay, .ion-tabs {
+	z-index: 20000;
+	position: fixed;
+}
+
+.aapplayer-div {
+	z-index: 5;
+	display: none;
+	position: fixed;
+	bottom: 0px;
+	width: 100%;
+	height: 170px;
+	margin: 0px auto;
+}
+
+.waiting, .waitingPlayer {
+	position: fixed;
+	z-index: 100;
+	padding: 50%;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,.5);
+}
+
+.waitingPlayer {
+	height: 170px;
+	padding: 50% 0%;
+	margin: 0 auto;
+}
+
+.branding {
+	width: 80%;
+	margin: 0 auto;
+	text-align: center;
+	max-width: 200px;
+	margin-top: 50px;
+	font-size: 150%;
+	font-weight: 600;
+}
+
+.branding img {
+	width: 100%;
+}
+
+.fonte-description img {
+	float: left;
+	padding-right: 10px;
+	padding-bottom: 10px;
+}
+
+.fonte-description h2 {
+	font-size: 130%;
+}
+.nothing-box{
+	display: fixed;
+	font-size:130%;
+	margin:0 auto;
+	align:center;
+	padding: 125px 25%;
+}
+
+/* Front Page first view branding */
+/*Pagina de frente principal*/
+#fp-regular {
+	left:0000px;
+}
+
+#fp-first-run {
+	width:60%;
+	margin: 15px auto;
+}
+.fp-wrap {
+	background-color: rgba(255,255,255,.7);
+	padding:20px;
+	margin:20px;
+    margin-bottom: 75px;
+	border-radius: 15px;
+}
+#fp-regular .fp-wrap a:before {
+	font-size:130px;
+
+}
+#fp-regular .fp-wrap h2 {
+	font-size: xx-large;
+	bottom: 0px;
+	position:relative;
+}
+.fp-wrap a {
+	height:150px;
+	width:150px;
+	border-radius:25px;
+}
+#fp-2 {
+	left:2000px;
+}
+#fp-3 {
+	left:4000px;
+}
+.fp {
+	position:absolute;
+	width:100%; /*change back to 100% after done messing */
+}
+.fp a.button {
+	margin: 10px auto;
+	position: relative;
+	max-width:500px;
+}
+#fp-div {
+	position:relative;
+	left:-2000px;
+}
+.detail-image {
+	width:100%;
+	max-width: 150px;
+}
+
+.second-header-bar.bar.bar-positive {
+	border-color: #387ef5;
+	border-top: none;
+}
+
+.sermon-page button {
+	margin: 2px;
+}
+
+
+.search {
+	border-radius: 30px;
+	padding: 0px;
+	margin: 0px;
+	padding-left: 5px;
+}
+
+.search input, .search label, .item-input-wrapper {
+	padding: 0px;
+	margin: 0px;
+	border-radius: 30px;
+	background-color: #fff;
+}
+
+.search i {
+	padding-left: 15px;
+}
+
+.amazingaudioplayer-card h2, .resource-card h2 {
+	font-style: italic;
+	font-weight: bold;
+}
+
+.amazingaudioplayer-card a, .resource-card a {
+	text-decoration: none;
+	font-weight: bold;
+}
+
+p.language-display {
+	text-decoration: none;
+	font-weight: bold;
+	font-size:75%;
+	background-color: #0c60ee;
+	display: inline-block;
+	padding: 0px 7px;
+	border-radius: 10px;
+	color: #fff;
+}
+
+.bible.language-display {
+	margin-left: 10px;
+}
+
+.teacher-display {
+	font-size:80%;
+	line-height:80%;
+}
+p.date-display {
+	font-size: 80%;
+}
+
+.bible-download {
+	z-index: 100;
+	padding-right: 30px;
+	font-size: 350%;
+	margin-right:20px;
+}
+.bible-icons {
+	padding-top:10px;
+	float:right;
+}
+
+@media (max-width: 300px) { 
+	.preacher-img, .bible-image-display, .bible-chapter, .title-lower {
+		display:none;
+ 	}
+
+ 	.title-upper {
+ 		display:block;
+ 	}
+
+ 	.item-avatar {
+ 		padding-left:0;
+ 	}
+ 	i.bible, .bible-download {
+ 		font-size:200%;
+ 		padding-right: 0px;
+ 		float:none;
+ 	}
+ 	.bible-download {
+ 		float:left;
+ 	}
+
+ 	.bible h2 {
+ 		vertical-align: top;
+ 	}
+ 	.bible {
+ 		padding:10px;
+ 	}
+
+ 	/*Country Selection CSS*/
+ 	.flag-div {
+ 		width: 45%;
+ 	}
+ }
+
+ @media (min-width: 301px) and (max-width: 399px) {
+ 	.title-lower {
+ 		display:none;
+ 	}
+ 	.title-upper {
+ 		display:block;
+ 		padding-bottom: 5px;
+ 	}
+ 	.item-content .org-img {
+ 		top: 95px;
+ 	}
+ 	img.bible-image-display {
+ 		top:35px;
+ 	}
+
+ }
+
+ @media (min-width: 400px) {
+ 	.title-upper {
+ 		display:none;
+ 	}
+ 	.title-lower {
+ 		display:block;
+ 	}
+ 	.bible-spacing {
+ 		display:none;
+ 	}
+ }
+
+a.speaker-name {
+}
+
+.amazingaudioplayer-card:nth-child(even), .resource-card:nth-child(even) {
+	background: #c6daec;
+}
+
+.item-divider h1 {
+	font-size: 140%;
+}
+
+.about-page h1 {
+	padding-top: 0px;
+	margin-top: 5px;
+}
+
+.about-page p {
+	margin-bottom: 20px;
+}
+
+.player-close-button {
+	float:right;
+	position:relative;
+	padding:5px;
+	z-index: 1000;
+}
+.ion-document-text{
+	min-width: 85px;
+}
+.tab-overlay, .ion-tabs {
+	z-index: 20000;
+	position: fixed;
+}
+.aapplayer-div {
+	z-index:5;
+	display: none; 
+	position: fixed;
+	bottom: 0px;
+	width: 100%;
+	height: 170px;
+	margin: 0px auto;
+}
+.waiting, .waitingPlayer {
+	position:absolute;
+	z-index: 100;
+	padding: 50%;
+	width:100%;
+	height:100%;
+	background-color:rgba(255,255,255,.5);
+}
+
+.waitingPlayer {
+	height:170px;
+	padding:50% 0%;
+	margin: 0 auto;
+}
+/* Front Page Branding */
+.branding {
+	width:80%;
+	margin: 0 auto;
+	text-align: center;
+	max-width: 200px;
+	margin-top:50px;
+	font-size: 150%;
+	font-weight: 600;
+}
+
+.branding img {
+	width:100%;
+}
+
+.fonte-description img {
+	float:left;
+	padding-right:10px;
+	padding-bottom: 10px;
+}
+
+.fonte-description h2 {
+	font-size:130%;
+}
+
+.item-complex .item-content, .item-radio .item-content {
+	padding-right:26px;
+}
+.sermon-page button {
+	margin: 2px;
+}
+.sermons-page {
+
+}
+.fonte-play {
+	float:right;
+	font-size:250%;
+}
+.license-block {
+	background-color: #ddd;
+	font-size:90%;
+	margin:20px;
+	padding:10px;
+}
+
+.search {
+	border-radius: 30px;
+	padding:0px;
+	margin:0px;
+	padding-left:5px;
+}
+.search input, .search label {
+	padding:0px;
+	margin: 0px;
+	border-radius: 30px;
+}
+.search i {
+	padding-left: 15px;
+}
+.search .item-input-wrapper button.button-clear {
+	/*right:30px;*/
+	color:#999;
+	right:5%;
+	font-weight: 500;
+	}
+
+.amazingaudioplayer-card a, .resource-card a {
+	text-decoration: none;
+	font-weight: bold;
+}
+
+ion-item.bible-books:nth-child(even), ion-item.resource-card:nth-child(even) {
+	background: #c6daec;
+}
+ion-item.bible-books .item-content {
+	background: transparent;
+}
+img.bible-img {
+	width:60px;
+}
+.item-icon-right .icon-accessory{
+	color:#666;
+}
+
+.org-img {
+	float: right;
+	position: absolute;
+	width:45px;
+	top:70px;
+}
+
+.responsive-sm .org-img {
+	width:25px;
+}
+
+.preacher-img {
+	height:100px;
+	width:100px;
+	float:left;
+	margin-right:10px;
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+	background-position: bottom;
+}
+
+/* Styles for Downloads Page */
+
+.item-divider h1 {
+	font-size:140%;
+
+}
+.about-page h1 {
+	padding-top:0px;
+	margin-top: 5px;
+}
+.about-page p {
+	margin-bottom: 20px;
+}
+
+.splash {
+	background-position: 40% 50%;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+.license_img {
+	max-height: 20px;
+}
+
+.social-link-button {
+	font-size: 350%;
+	margin-right: 20px;
+}
+
+/* Este css modal e' para editar ou incluir animacoes e novos estilos das telas para o usuario*/
+.modal {
+	display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+/* Modal Conteudo */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* Add Animation */
+/* Adicionar animacao */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+/* The Close Button */
+/* Fechar Botao*/
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 2px 16px;
+    background-color: #387ef5;
+    color: white;
+}
+
+.modal-body {padding: 2px 16px;}
+
+.modal-footer {
+    padding: 2px 16px;
+    background-color: #387ef5;
+    color: white;
+}
+
+.radio-content > .radio-icon:before {
+    content: "\f3a6" !important; /*deselected - Ionic class = ion-android-radio-button-off */
+    visibility: visible;
+}
+
+.item-radio input:checked + .radio-content .radio-icon:before {
+    content: "\f3a7" !important; /*selected Ionic class = ion-android-radio-button-on */
+    visibility: visible;
+}

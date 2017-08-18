@@ -1,0 +1,162 @@
+<ion-view view-title="{{'DOWNLOAD_TITLE' | translate}}">
+  <ion-content>
+    
+    <!-- Bible Downloads -->
+    <div class="bible-downloads" ng-controller="DlAccordionCtrl">
+      <!-- Bible Downloads -->
+      <div class="item item-divider bar item-icon-left"
+      ng-class="downloads.bible.length ? 'item-icon-right' : ''">
+        <i class="icon" ng-class="isBibleDownload ? 'ion-plus' : 'ion-minus'"
+        ng-click="isBibleDownload = !isBibleDownload;"></i>
+        <button class="button button-icon icon ion-edit"
+              ng-click="deleteButton()"
+              ng-if="downloads.bible.length"></button>
+        {{'TAB_DOWNLOADS_BIBLIA' | translate}}
+      </div>
+
+      <ion-list ng-hide="isBibleDownload" 
+      show-reorder="shouldShowReorder" 
+      show-delete=false
+      can-swipe="listCanSwipe"
+      class="item-remove-animate"
+      controller="ListCtrl">
+
+          
+        <ion-item  ng-repeat="chapter in downloads.bible" class="item-icon-right item-avatar jon-list" type="item-text-wrap" >
+          <img src="images/speakers/bible.png" />
+          <i style="float:right" ng-click="playNow({{chapter}})" class="icon ion-ios-play fonte-play"></i>  
+        
+          <h2 class="" ng-click="playNow({{chapter}})" >{{chapter.title}}</h2>
+          <div ng-if="showDelete" class="item-left-edit item-delete 
+          enable-pointer-events visible active">
+              <button 
+                class="ion-minus-circled button icon button-icon" 
+                ng-click="onItemDelete(chapter, 'bible')">
+              </button>
+          </div>
+
+          
+          <ion-option-button class="button-assertive"
+                             ng-click="edit(chapter)">
+            Edit
+          </ion-option-button>
+          <ion-reorder-button class="ion-navicon" on-reorder="moveItem(item, $fromIndex, $toIndex)"></ion-reorder-button>
+
+
+      <!-- Name of language. Note to self - find less complicated way to do this -->
+      <p ng-if="settings.lang === 'pt'" class="language-display" ng-click="playNow({{chapter}})" >{{chapter.rLanguage.pt_language}}</p>
+        <p ng-if="settings.lang === 'en'" class="language-display" ng-click="playNow({{chapter}})" >{{chapter.rLanguage.en_language}}</p>
+      <ion-reorder-button class="icon ion-navicon"
+                        on-reorder="moveItem(item, $fromIndex, $toIndex)">
+    </ion-reorder-button>
+      <!-- Play button -->
+       
+      
+
+
+        </ion-item>
+    </ion-list>
+    </div>
+
+  <div class="teaching-downloads"
+  ng-controller="DlAccordionCtrl">
+
+    <!-- Teaching Downloads -->
+    <div class="item item-divider bar item-icon-left" 
+      ng-class="downloads.teaching.length ? 'item-icon-right' : ''">
+        <i class="icon" ng-class="isTeachingDownload ? 'ion-plus' : 'ion-minus'" 
+        ng-click="isTeachingDownload = !isTeachingDownload;"></i>
+        <button class="button button-icon icon ion-edit"
+          ng-click="deleteButton()"
+          ng-if="downloads.teaching.length"></button>
+        {{'TAB_DOWNLOADS_SERMONS' | translate}}
+    </div>
+
+    <ion-list ng-hide="isTeachingDownload">
+        <ion-item ng-repeat="teaching in downloads.teaching" class="item-icon-right amazingaudioplayer-card jon-list" ng-controller="SermonCardCtrl">
+            
+            <div ng-click="playNow(teaching)" class="preacher-img" style="background-image:url({{teacher_photo}})">
+                <img ng-src="{{org_photo}}" class="org-img"/></div>
+                
+            <i ng-click="playNow(teaching)" class="icon ion-ios-play"></i>
+            <h2 ng-click="playNow(teaching)" ng-if="settings.lang =='en'">"{{teaching.en_title}}"</h2>
+            <h2 ng-click="playNow(teaching)" ng-if="settings.lang =='pt'">"{{teaching.pt_title}}"</h2>
+            <p><a href="#/tab/sermons/speaker-{{teaching.teacher_id}}" ng-if="settings.lang =='pt'" style="float:left" class="speaker-name">{{teacher.pt_name}}<br/></a>
+            <a href="#/tab/sermons/speaker-{{teaching.teacher_id}}" ng-if="settings.lang =='en'" style="float:left">{{teacher.en_name}}<br/></a></p>
+
+            <p class="language-display" ng-if="settings.lang == 'en'" class="language-display">{{settings.languages[teaching.primary_language_id].en_language}} <i ng-if="teaching.secondary_language_id">/</i> {{settings.languages[teaching.secondary_language_id].en_language}} <!--{{teaching.hits}}--></p>
+            <p class="language-display" ng-if="settings.lang == 'pt'" class="language-display">{{settings.languages[teaching.primary_language_id].pt_language}} <i ng-if="teaching.secondary_language_id">/</i> {{settings.languages[teaching.secondary_language_id].pt_language}} <!--{{teaching.hits}}--></p>
+            <div ng-if="showDelete" class="item-left-edit item-delete 
+                enable-pointer-events visible active">
+              <button 
+                class="ion-minus-circled button icon button-icon" 
+                ng-click="onItemDelete(teaching, 'teaching')">
+              </button>
+            </div>
+        </ion-item>
+    </ion-list>
+    </div>
+    
+    <div class="resource-downloads" ng-controller="DlAccordionCtrl">
+    <!-- Resource downloads -->
+        <div class="item item-divider bar item-icon-left"
+        ng-class="downloads.resource.length ? 'item-icon-right' : ''">
+            <i class="icon" ng-class="isResourceDownload ? 'ion-plus' : 'ion-minus'"
+             ng-click="isResourceDownload = !isResourceDownload;"></i>
+            <button class="button button-icon icon ion-edit"
+              ng-click="showDelete = !showDelete; deleteButton()"
+              ng-if="downloads.resource.length"></button>
+
+            {{'TAB_DOWNLOADS_MATERIAIS' | translate}}
+        </div>
+        <ion-list ng-hide="isResourceDownload">
+            <ion-item ng-repeat="resource in downloads.resource" class="item-icon-right resource-card" ng-controller="ResourceCardCtrl">
+
+                <i class="icon ion-document-text" style="height:100%" ng-click="resourceOpen(resource.fileUrlLocalPath, resource.id)"></i>
+                <row class="jon-list">
+                    <div  href="#/tab/resources/resource-{{resource.id}}" class="preacher-img col col-25" style="background-image:url({{teacher_photo}}); min-height:100px"/>
+                        <div class="row" style="height:100%; padding:0;">
+                            <img src="{{org_photo}}" ng-if="(teacher.id != 3) || (org.id === 4)" style="padding:0" class="col-50 col col-bottom org-photo-overlay"/>
+                        </div>
+                    </div>
+                    <div  href="#/tab/resources/resource-{{resource.id}}" class="col col-75 col-offset-25">
+                    
+                        <h2 ng-if="settings.lang =='en'" ng-click="resourceOpen(resource, resource.id)">{{resource.en_name}}</h2>
+                        <h2 ng-if="settings.lang =='pt'" ng-click="resourceOpen(resource, resource.id)">{{resource.pt_name}}</h2>
+
+                        <!--Author Line -->
+                        <a class="teacher-name" href="#/tab/resources/speaker-{{resource.teacher_id}}" ng-if="settings.lang =='pt'">{{teacher.pt_name}}<br/></a>
+                        <a class="teacher-name" href="#/tab/resources/speaker-{{resource.teacher_id}}" ng-if="settings.lang =='en'">{{teacher.en_name}}<br/></a>
+                        <a class="teacher-name" href="#/tab/resources/speaker-{{resource.teacher_id}}" ng-if="settings.lang =='fr'">{{teacher.fr_name}}<br/></a>
+
+                        <br/>
+
+                        <!--Language Line-->
+                        <p class="language-display" ng-if="settings.lang == 'en'">{{settings.languages[resource.primary_language_id].en_language}} <i ng-if="sermon.secondary_language_id">/</i> {{settings.languages[resource.secondary_language_id].en_language}} <!--{{sermon.hits}}--></p>
+                        <p class="language-display" ng-if="settings.lang == 'pt'">{{settings.languages[resource.primary_language_id].pt_language}} <i ng-if="sermon.secondary_language_id">/</i> {{settings.languages[resource.secondary_language_id].pt_language}} <!--{{sermon.hits}}--></p>
+                        <p class="language-display" ng-if="settings.lang == 'fr'">{{settings.languages[resource.primary_language_id].fr_language}} <i ng-if="sermon.secondary_language_id">/</i> {{settings.languages[resource.secondary_language_id].fr_language}} <!--{{sermon.hits}}--></p>
+                        <div class="resource-description item-text-wrap item-icon-right" ng-if="settings.lang == 'en'"><p>{{resource.en_description | limitTo: 200}}{{resource.en_description.length > 200 ? '...' : ''}}</p></div>
+                        <div class="resource-description item-text-wrap item-icon-right" ng-if="settings.lang == 'pt'"><p>{{resource.pt_description | limitTo: 200}}{{resource.pt_description.length > 200 ? '...' : ''}}</p></div>
+                        <div class="resource-description item-text-wrap item-icon-right" ng-if="settings.lang == 'fr'"><p>{{resource.fr_description | limitTo: 200}}{{resource.fr_description.length > 200 ? '...' : ''}}</p></div>
+                    </div>
+                    <div ng-if="showDelete" class="item-left-edit item-delete 
+                        enable-pointer-events visible active">
+                      <button 
+                        class="ion-minus-circled button icon button-icon" 
+                        ng-click="onItemDelete(resource, 'resource')">
+                      </button>
+                    </div>
+                </row>
+            </ion-item>
+        </ion-list>
+    </div>
+
+<div ng-if="!(isBibleDownload || isTeachingDownload || isResourceDownload)" style="margin:40px 20px;padding:10px;">
+        <p><div id="file-name"></div><div ng-if="queue > 0">(+{{queue}} downloads in queue)</div> </p>
+        <progress max="100" value="0" id="ft-prog"></progress>
+        <p><span id="download-progress"></span>{{'TAB_DOWNLOADED' | translate}}</p>
+        <p ng-if="downloadProgress==100">100% Completo</p>
+        <button ng-click="abort()" href="#" ng-if="queue >= 0">{{'BUTTON_CANCEL' | translate}}</button>
+    </div>
+  </ion-content>
+</ion-view>

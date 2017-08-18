@@ -1,0 +1,191 @@
+[
+  {
+    "Index":1,
+    "bookEN":"Matthew",
+    "bookPT":"Mateus",
+    "bookCode":"Matt",
+    "numChapters":28
+  },
+  {
+    "Index":2,
+    "bookEN":"Mark",
+    "bookPT":"Marcos",
+    "bookCode":"Mark",
+    "numChapters":16
+  },
+  {
+    "Index":3,
+    "bookEN":"Luke",
+    "bookPT":"Lucas",
+    "bookCode":"Luke",
+    "numChapters":24
+  },
+  {
+    "Index":4,
+    "bookEN":"John",
+    "bookPT":"João",
+    "bookCode":"John",
+    "numChapters":21
+  },
+  {
+    "Index":5,
+    "bookEN":"Acts",
+    "bookPT":"Atos",
+    "bookCode":"Acts",
+    "numChapters":28
+  },
+  {
+    "Index":6,
+    "bookEN":"Romans",
+    "bookPT":"Romanos",
+    "bookCode":"Rom",
+    "numChapters":16
+  },
+  {
+    "Index":7,
+    "bookEN":"1 Corinthians",
+    "bookPT":"1 Coríntios",
+    "bookCode":"1Cor",
+    "numChapters":16
+  },
+  {
+    "Index":8,
+    "bookEN":"2 Corinthians",
+    "bookPT":"2 Coríntios",
+    "bookCode":"2Cor",
+    "numChapters":13
+  },
+  {
+    "Index":9,
+    "bookEN":"Galatians",
+    "bookPT":"Gálatas",
+    "bookCode":"Gal",
+    "numChapters":6
+  },
+  {
+    "Index":10,
+    "bookEN":"Ephesians",
+    "bookPT":"Efésios",
+    "bookCode":"Eph",
+    "numChapters":6
+  },
+  {
+    "Index":11,
+    "bookEN":"Philippians",
+    "bookPT":"Filipenses",
+    "bookCode":"Phil",
+    "numChapters":4
+  },
+  {
+    "Index":12,
+    "bookEN":"Colossians",
+    "bookPT":"Colossenses",
+    "bookCode":"Col",
+    "numChapters":4
+  },
+  {
+    "Index":13,
+    "bookEN":"1 Thessalonians",
+    "bookPT":"1 Tessalonicenses",
+    "bookCode":"1Thess",
+    "numChapters":5
+  },
+  {
+    "Index":14,
+    "bookEN":"2 Thessalonians",
+    "bookPT":"2 Tessalonicenses",
+    "bookCode":"2Thess",
+    "numChapters":3
+  },
+  {
+    "Index":15,
+    "bookEN":"1 Timothy",
+    "bookPT":"1 Timóteo",
+    "bookCode":"1Tim",
+    "numChapters":6
+  },
+  {
+    "Index":16,
+    "bookEN":"2 Timothy",
+    "bookPT":"2 Timóteo",
+    "bookCode":"2Tim",
+    "numChapters":4
+  },
+  {
+    "Index":17,
+    "bookEN":"Titus",
+    "bookPT":"Tito",
+    "bookCode":"Titus",
+    "numChapters":3
+  },
+  {
+    "Index":18,
+    "bookEN":"Philemon",
+    "bookPT":"Filemom",
+    "bookCode":"Phlm",
+    "numChapters":1
+  },
+  {
+    "Index":19,
+    "bookEN":"Hebrews",
+    "bookPT":"Hebreus",
+    "bookCode":"Heb",
+    "numChapters":13
+  },
+  {
+    "Index":20,
+    "bookEN":"James",
+    "bookPT":"Tiago",
+    "bookCode":"Jas",
+    "numChapters":5
+  },
+  {
+    "Index":21,
+    "bookEN":"1 Peter",
+    "bookPT":"1 Pedro",
+    "bookCode":"1Pet",
+    "numChapters":5
+  },
+  {
+    "Index":22,
+    "bookEN":"2 Peter",
+    "bookPT":"2 Pedro",
+    "bookCode":"2Pet",
+    "numChapters":3
+  },
+  {
+    "Index":23,
+    "bookEN":"1 John",
+    "bookPT":"1 João",
+    "bookCode":"1John",
+    "numChapters":5
+  },
+  {
+    "Index":24,
+    "bookEN":"2 John",
+    "bookPT":"2 João",
+    "bookCode":"2John",
+    "numChapters":1
+  },
+  {
+    "Index":25,
+    "bookEN":"3 John",
+    "bookPT":"3 João",
+    "bookCode":"3John",
+    "numChapters":1
+  },
+  {
+    "Index":26,
+    "bookEN":"Jude",
+    "bookPT":"Judas",
+    "bookCode":"Jude",
+    "numChapters":1
+  },
+  {
+    "Index":27,
+    "bookEN":"Revelation",
+    "bookPT":"Apocalipse",
+    "bookCode":"Rev",
+    "numChapters":22
+  }
+]

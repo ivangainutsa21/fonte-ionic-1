@@ -1,0 +1,17 @@
+<ion-view view-title= "{{'TAB_ABOUT_TEAM' | translate}}" ng-controller="AboutTeamCtrl">
+  <ion-content on-swipe-left="goToStart()" class="about-page">
+  <ion-item class="item-text-wrap">
+
+    <img src='images/android/icon-96-xhdpi.png' style="float:center; padding: 0 10px 10px 0; margin: 0 auto;"/><h1>Fonte da Vida</h1>
+  </ion-item>
+  <ion-item ng-repeat="member in team track by $index" class="item item-thumbnail-left">
+    
+      <img src="{{member.image}}">
+      <h2>{{member.name}}</h2>
+      <p ng-if="settings.lang =='pt'">{{member.pt_job}}</p>
+      <p ng-if="settings.lang =='en'">{{member.en_job}}</p>
+   
+
+  </ion-item>
+  </ion-content>
+</ion-view>

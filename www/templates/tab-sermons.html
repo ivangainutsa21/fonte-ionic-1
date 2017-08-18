@@ -1,0 +1,38 @@
+<ion-view view-title="{{'SERMONS_TITLE' | translate}}">
+    <header-bar></header-bar>
+    <ion-content class="sermon-page">
+    <div class="waiting"><ion-spinner></ion-spinner></div> 
+    <nothing-here></nothing-here>
+    <div class="sermons-page">
+        <ion-item ng-repeat="teaching in filteredItems = (settings.teachings | filter : search_query | orgFilter | orderBy : '-created_at')" class="amazingaudioplayer-card" href="#/tab/sermons/teaching-{{teaching.id}}" ng-controller="SermonCardCtrl">
+            
+            <div class="title-upper">
+                <h2 ng-if="settings.lang =='en'">"{{teaching.en_title}}"</h2>
+                <h2 ng-if="settings.lang =='pt'">"{{teaching.pt_title}}"</h2>
+            </div>
+
+            <div class="preacher-img" style="background-image:url({{teacher_photo}})">
+                <img ng-src="{{org_photo}}" class="org-img"/>
+            </div>
+            
+            <div class="title-lower">
+                <h2 ng-if="settings.lang =='en'">"{{teaching.en_title}}"</h2>
+                <h2 ng-if="settings.lang =='pt'">"{{teaching.pt_title}}"</h2>
+            </div>
+            <a href="#/tab/teaching/speaker-{{teaching.teacher_id}}" ng-if="settings.lang =='pt'" class="teacher-display">{{teacher.pt_name}}<br/></a>
+            <a href="#/tab/teaching/speaker-{{teaching.teacher_id}}" ng-if="settings.lang =='en'" class="teacher-display">{{teacher.en_name}}<br/></a>
+            <i ng-click="playNow(teacher,teaching)" class="icon ion-ios-play fonte-play"></i>
+
+            <p class="date-display" ng-if="settings.lang == 'en'">{{teaching.created_at | date : longDate}}</p>
+            <p class="language-display" ng-if="settings.lang == 'en'">{{settings.languages[teaching.primary_language_id].en_language}} <i ng-if="teaching.secondary_language_id">/</i> {{settings.languages[teaching.secondary_language_id].en_language}}</p>
+            <p class="date-display" ng-if="settings.lang == 'pt'">{{teaching.created_at | date : 'd MMMM, y'}}</p>
+            <p class="language-display" ng-if="settings.lang == 'pt'">{{settings.languages[teaching.primary_language_id].pt_language}} <i ng-if="teaching.secondary_language_id">/</i> {{settings.languages[teaching.secondary_language_id].pt_language}}</p>
+
+            <div style=""><img class="license_img license-display" ng-src="{{license.img_url}}"/></div>
+
+            <!-- <dwn-button ng-hide="teaching.fileUrlLocalPath" value="{{teaching}}" case-compare="sermons"></dwn-button> -->
+            
+        </ion-item>
+    </div>
+</ion-content>
+</ion-view>

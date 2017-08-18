@@ -1,0 +1,76 @@
+<div ng-controller="PlayerCtrl as controller" ng-show="controller.config.open" class="videogular-container"
+         ng-class="{audio: controller.config.playerType === 'audio', video: controller.config.playerType !== 'audio'}" ng-cloak>
+    
+      <videogular vg-player-ready="controller.onPlayerReady($API)" vg-complete="controller.onCompleteSource()" 
+                  vg-theme="controller.config.theme.url" vg-auto-play="controller.config.autoPlay" 
+                  vg-clear-media-on-navigate="false" class="videogular-container" 
+                  ng-class="{audio: controller.config.playerType === 'audio', video: controller.config.playerType !== 'audio'}"
+                  vg-native-fullscreen="false" vg-plays-inline="true">
+        <vg-media ng-show = "controller.config.playerType === 'audio'"
+                  vg-src="controller.config.sources"
+                  vg-type="audio">
+        </vg-media>
+        
+        <vg-media ng-hide = "controller.config.playerType === 'audio'"
+                  vg-src="controller.config.sources"
+                  vg-type="video">
+        </vg-media>
+        
+        <div class="angular-player-close-btn" ng-click="controller.closePlayer()" 
+             ng-class="{audio: controller.config.playerType === 'audio', video: controller.config.playerType !== 'audio'}">
+          <a><img width="25px" src="images/close.png"></a>
+        </div>
+        <div ng-show = "controller.config.playerType === 'audio'">
+          <div class="angular-player-image">
+            <div class="angular-player-image-space"></div>
+            <img class="angular-player-image-source" ng-src="{{controller.sourceData[controller.currentSource].image}}">
+          </div>
+
+          <div class="amazingaudioplayer-image-clear" style="box-sizing: content-box;"></div>
+          
+          <div class="angular-player-text">
+            <div class="angular-player-title">{{controller.sourceData[controller.currentSource].title}}</div>
+            <div class="amazingaudioplayer-title-clear"></div>
+            <div class="angular-player-info">{{controller.sourceData[controller.currentSource].subtitle}}<br></div>
+          </div>
+          
+          <div class="amazingaudioplayer-image-clear" style="box-sizing: content-box;"></div>
+
+          <div class="angular-player-control-bar">
+            <div class="angular-player-playpause" style="display: block;">
+              <div ng-class='controller.checkState()' ng-click="controller.playPause()"></div>
+            </div>
+              <div class="angular-player-prev" ng-click="controller.prevSource()"></div>
+              <div class="angular-player-next" ng-click="controller.nextSource()"></div>
+              
+            <div class="amazingaudioplayer-bar-buttons-clear"></div>
+          </div>
+        </div>
+
+        <vg-controls>
+          <vg-play-pause-button ng-hide = "controller.config.playerType === 'audio'"></vg-play-pause-button>
+          <vg-time-display>{{ currentTime | date:'mm:ss':'+0000' }}</vg-time-display>
+          <vg-scrub-bar>
+            <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+          </vg-scrub-bar>
+          <vg-time-display>{{ timeLeft | date:'mm:ss':'+0000' }}</vg-time-display>
+          <vg-volume>
+            <vg-mute-button></vg-mute-button>
+            <vg-volume-bar></vg-volume-bar>
+          </vg-volume>
+          
+           <vg-fullscreen-button ng-hide = "controller.config.playerType === 'audio'"></vg-fullscreen-button>
+        </vg-controls>
+        <!-- This is where the buffering image comes in -->
+        <vg-buffering></vg-buffering>
+
+        <vg-overlay-play ng-hide = "controller.config.playerType === 'audio'"></vg-overlay-play>
+        <!-- COMMENTED CODE
+        <vg-poster vg-url='controller.config.plugins.poster'></vg-poster>
+
+        <div class="my-logo-layer" ng-show="controller.API.currentState != 'play'">
+            <img ng-src="{{controller.config.plugins.poster}}">
+        </div>
+        -->
+      </videogular>
+    </div>

@@ -1,0 +1,45 @@
+<ion-view view-title="{{'BOOK_TITLE' | translate}}">
+	
+	<header-bar></header-bar>
+	<ion-content >
+	
+	<div class="waiting"><ion-spinner></ion-spinner></div>
+	<nothing-here></nothing-here>
+	
+	<ion-list>
+        <ion-item ng-repeat="resource in filteredItems = (resourceList | filter : search_query | rLangFilter:settings | orgFilter | orderBy: '-created_at')" class="resource-card" href="#/tab/resources/resource-{{resource.id}}" ng-controller="ResourceCardCtrl">
+	        <row>
+	            <div class="preacher-img col col-25" style="background-image:url({{teacher_photo}}); min-height:100px"/>
+	            	<div class="row" style="height:100%; padding:0;">
+	                	<img ng-src="{{org_photo}}" ng-if="(teacher.id != 3) || (org.id === 4)" style="padding:0" class="col-50 col col-bottom org-photo-overlay"/>
+	                </div>
+	            </div>
+	            <div class="col col-75 col-offset-25">
+		            <h2 ng-if="settings.lang =='en'">{{resource.en_name}}</h2>
+		            <h2 ng-if="settings.lang =='pt'">{{resource.pt_name}}</h2>
+		            <h2 ng-if="settings.lang =='fr'">{{resource.fr_name}}</h2>
+
+		            <!--Author Line -->
+		            <a class="teacher-name" href="#/tab/teaching/speaker-{{resource.teacher_id}}" ng-if="settings.lang =='pt'">{{teacher.pt_name}}<br/></a>
+		            <a class="teacher-name" href="#/tab/teaching/speaker-{{resource.teacher_id}}" ng-if="settings.lang =='en'">{{teacher.en_name}}<br/></a>
+		            <a class="teacher-name" href="#/tab/teaching/speaker-{{resource.teacher_id}}" ng-if="settings.lang =='fr'">{{teacher.fr_name}}<br/></a>
+
+		            
+					<br/>
+
+		            <!--Language Line-->
+		            
+		            <p class="language-display" ng-if="settings.lang == 'en'">{{settings.languages[resource.primary_language_id].en_language}} <i ng-if="sermon.secondary_language_id">/</i> {{settings.languages[resource.secondary_language_id].en_language}} <!--{{sermon.hits}}--></p>
+		            <p class="language-display" ng-if="settings.lang == 'pt'">{{settings.languages[resource.primary_language_id].pt_language}} <i ng-if="sermon.secondary_language_id">/</i> {{settings.languages[resource.secondary_language_id].pt_language}} <!--{{sermon.hits}}--></p>
+		            <p class="language-display" ng-if="settings.lang == 'fr'">{{settings.languages[resource.primary_language_id].fr_language}} <i ng-if="sermon.secondary_language_id">/</i> {{settings.languages[resource.secondary_language_id].fr_language}} <!--{{sermon.hits}}--></p>
+		            <div style="float:right"><img class="license_img" ng-src="{{license.img_url}}"/></div>
+		            
+
+		            <div class="resource-description item-text-wrap" >
+		            	<p class="item-text-wrap" ng-if="settings.lang == 'en'">{{resource.en_description | limitTo: 200}}{{resource.en_description.length > 200 ? '...' : ''}}</p><p ng-if="settings.lang == 'pt'">{{resource.pt_description | limitTo: 200}}{{resource.pt_description.length > 200 ? '...' : ''}}</p></div>
+				</div>
+        	</row>
+        </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

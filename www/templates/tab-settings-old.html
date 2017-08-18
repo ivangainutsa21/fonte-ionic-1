@@ -1,0 +1,39 @@
+<ion-view view-title="{{'SETTINGS_TITLE' | translate}}">
+  <ion-content>
+    <ion-list>
+    <h2>{{ 'SETTINGS_INFORMATION' | translate}}</h2>
+    <form name="settingsForm" ng-submit="SettingsCtrl.set">
+    <h4 class="padding">{{'SETTINGS_CLANGUAGE' | translate}}</h4>
+      <div class="button-bar bar-calm padding language-picker">
+	      <button ng-model="appLanguage" class="button button-positive" ng-click="languageChange('en')">{{'SETTINGS_EN' | translate}}</a>
+	      <button ng-model="appLanguage" class="button button-calm" ng-click="languageChange('pt')">{{'SETTINGS_PT' | translate}}</a>
+        <button ng-model="appLanguage" class="button button-calm" ng-click="languageChange('fr')">{{'SETTINGS_FR' | translate}}</a>
+
+      </div>
+      <!--Keeping these for the time being to help me understand how these variables work!
+      <p>{{appLanguage}}</p>
+	  <pre ng-bind="appLanguage"></pre>
+	  <div ng-bind="settings.language"></div>-->
+	  <label class="item item-input item-select">
+	    <div class="input-label">
+	      Resource Language
+	    </div>
+      
+      <select ng-model="settings.rlanguage" ng-controller="languagePicker">
+        <option ng-repeat="lang in settings.languages" ng-value='{{lang.id}}'>{{lang.en_language}}</option>
+      </select>
+	  </label>
+
+	  
+    </ion-list>
+
+    <h4 class="padding">settings.rlanguage {{'SETTINGS_ORGANIZATIONS' | translate}}</h4>
+    <ion-list>
+    	  <ion-checkbox ng-repeat="item in settings.orgList" ng-model="item.checked" ng-checked="item.checked">{{item.en_orgName}}</ion-checkbox>
+    </ion-list>
+    <button class="button button-full button-positive">
+	  Submit
+	</button>
+	</form>
+  </ion-content>
+</ion-view>

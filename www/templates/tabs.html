@@ -1,0 +1,58 @@
+<!--
+Create tabs with an icon and label, using the tabs-positive style.
+Each tab's child <ion-nav-view> directive will have its own
+navigation history that also transitions its views in and out.
+-->
+ <div id="amazingaudioplayer-1" class="aapplayer-div" style="display:none;position:fixed;bottom:45px;width:100%;height:170px;margin:0px auto 0px;z-index:5">
+    <div class="waitingPlayer"><ion-spinner></ion-spinner></div>
+    <a class="player-close-button"><img width="25px" src="images/close.png"/></a>
+    <ul class="amazingaudioplayer-audios" style="display:none;"></ul>
+</div>   
+<ion-tabs class="tabs-icon-top tabs-color-active-positive tabs-bottom" ng-controller="tabCtrl">
+
+  <div class="tab-overlay">
+    <!-- Dashboard Tab -->
+    <ion-tab title="{{'TAB_HOME' | translate}}" icon-off="ion-ios-home-outline" icon-on="ion-ios-home" href="#/tab/dash">
+      <ion-nav-view name="tab-dash"></ion-nav-view>
+    </ion-tab>
+
+    <!-- Bible Tab -->
+    <ion-tab title="{{'TAB_BIBLES' | translate}}" icon-off="ion-ios-book-outline" icon-on="ion-ios-book" href="#/tab/bible" class="bible-tab">
+      <ion-nav-view name="tab-bible"></ion-nav-view>
+
+    </ion-tab>
+
+    <!-- Sermons Tab -->
+    <ion-tab title="{{'TAB_SERMONS' | translate}}" icon-off="ion-mic-b" icon-on="ion-mic-b" href="#/tab/sermons">
+      <ion-nav-view name="tab-sermons"></ion-nav-view>
+    </ion-tab>
+
+    <!-- Resources Tab -->
+    <ion-tab title="{{'TAB_RESOURCES' | translate}}" icon-off="ion-ios-folder-outline" icon-on="ion-ios-folder" href="#/tab/resources" class="resource-tab">
+      <ion-nav-view name="tab-resources"></ion-nav-view>
+    </ion-tab>
+
+    <!-- Videos Tab -->
+    <!-- <ion-tab title="{{'TAB_VIDEOS' | translate}}" icon-off="ion-ios-videocam-outline" icon-on="ion-ios-videocam" href="#/tab/videos" class="video-tab">
+      <ion-nav-view name="tab-videos"></ion-nav-view>
+    </ion-tab> -->
+    
+    <!-- Downloads Tab -->
+    <ion-tab title="{{'TAB_DOWNLOADS' | translate}}" icon-off="ion-ios-cloud-download-outline" class="download-icon" icon-on="ion-ios-cloud-download" href="#/tab/download">
+      <ion-nav-view name="tab-download"></ion-nav-view>
+    </ion-tab>
+    
+    <!-- Settings Tab 
+    <ion-tab title="{{'TAB_ABOUT' | translate}}" icon-off="ion-ios-information-outline" icon-on="ion-ios-information" href="#/tab/about">
+          <ion-nav-view name="tab-about"></ion-nav-view>
+    </ion-tab>-->
+
+    <!-- Org Tab 
+      <ion-tab title="Organization List" icon-off="ion-coffee" icon-on="ion-coffee" href="#/info/orglist">
+          <ion-nav-view name="tab-info"></ion-nav-view>
+    </ion-tab>-->
+
+  </div>
+
+
+</ion-tabs>

@@ -1,0 +1,40 @@
+<ion-view view-title="{{'TAB_LIST_ORGANIZATIONS' | translate}}">
+	
+	<ion-content on-swipe-right="goBack()" on-swipe-left="goForward()">
+	<ion-list>
+        <ion-item ng-repeat="org in orgList" class="resource-card">
+            <div style="display:none">{{teacher = (settings.speakerList | filter : {id: resource.teacher_id})[0];
+            
+            license = (settings.licenses | filter : {id: org.license_type_id})[0];}}</div>
+	        <row>
+	            <div class="preacher-img col col-25" style="background-image:url({{org.photo}}); min-height:100px"/>
+	            </div>
+	            <div class="col col-75 col-offset-25">
+		            <h2 ng-if="settings.lang =='en'">{{org.en_name}}</h2>
+		            <h2 ng-if="settings.lang =='pt'">{{org.pt_name}}</h2>
+		            <h2 ng-if="settings.lang =='fr'">{{org.fr_name}}</h2>
+
+					<!-- <dwn-button ng-hide="resource.fileUrlLocalPath" value="{{resource}}" case-compare="resources"></dwn-button> -->
+
+		            
+					<br/>
+
+		            <!--Language Line-->
+		            
+
+		            <div style="float:right">
+		            	<ion-checkbox class="list-checkbox"ng-model="org.checked" ng-checked="org.checked"></ion-checkbox>
+		            	<p style="font-size:60%">{{'TAB_SHOW_RESOURCES' | translate}}<br/>{{'TAB_FROM_ORGANIZATION' | translate}}</p>
+	            	</div>
+		            
+
+		            <div class="resource-description item-text-wrap" >
+		            	<p class="item-text-wrap" ng-if="settings.lang == 'en'" ng-bind-html="org.en_description | limitTo: 200"></p>
+		            	<p class="item-text-wrap" ng-if="settings.lang == 'pt'" ng-bind-html="org.pt_description | limitTo: 200"></p>
+	            	</div>
+				</div>
+        	</row>
+        </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

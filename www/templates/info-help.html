@@ -1,0 +1,39 @@
+<ion-view view-title="{{'TAB_ABOUT_HELPING' | translate}}">
+  <ion-content on-swipe-left="goToStart()" class="about-page">
+  <ion-item class="item-text-wrap">
+  <img src='images/ios-icon-120.png' style="float:left; padding: 0 10px 10px 0;"/><h1>Fonte da Vida</h1>
+    <div>
+      <ion-list ng-hide="isBibleDownload" show-delete="data.showDelete" class="item-remove-animate" ng-controller="ListCtrl">
+          <ion-header-bar class="bar-positive" style="padding:25px; position: relative">
+            <div class="buttons">
+              <button class="button button-icon icon ion-ios-minus-outline"
+                ng-click="data.showDelete = !data.showDelete; data.showReorder = false"></button>
+            </div>
+            <h1 class="title">Ionic Delete/Option Buttons</h1>
+            <div class="buttons">
+            </div>
+          </ion-header-bar>
+          <ion-item ng-repeat="item in items" 
+                  item="item"
+                  href="#/item/{{item.id}}" class="item-remove-animate">
+          Item {{ item.id }}
+          <ion-delete-button class="ion-minus-circled" 
+                             ng-click="onItemDelete(item)">
+          </ion-delete-button>
+          <ion-option-button class="button-assertive"
+                             ng-click="edit(item)">
+            Edit
+          </ion-option-button>
+          <ion-option-button class="button-calm"
+                             ng-click="share(item)">
+            Share
+          </ion-option-button>
+          <ion-reorder-button class="ion-navicon" on-reorder="moveItem(item, $fromIndex, $toIndex)"></ion-reorder-button>
+        </ion-item>
+      
+    </ion-list>
+    test
+    </div>
+  </ion-item>
+  </ion-content>
+</ion-view>

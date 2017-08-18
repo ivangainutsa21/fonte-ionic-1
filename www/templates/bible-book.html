@@ -1,0 +1,49 @@
+<ion-view view-title="{{'BOOK_HEADER' | translate}}" ng-controller="BibleBookCtrl">
+  <ion-content>
+    <div class="waiting"><ion-spinner></ion-spinner></div>
+    <nothing-here></nothing-here>
+    
+    <!-- Add this section if there is a copyright organization OR if there is a list of native language people who recorded the work -->
+    <div ng-if="copyright.organization[0].organization.length || speakers.length">
+      <div class="item item-divider bible-org-info">{{'ORGANIZATION' | translate}}</div>
+      <div class="item bible-org-info item-text-wrap">
+        <h3>{{copyright.organization[0].organization}}</h3>
+        {{copyright.mark}}
+        <br />
+        <a href="{{copyright.organization[0].organization_url}}">{{copyright.organization[0].organization_url}}</a>
+        <br />
+        <!-- Narrators, if known -->
+        <p class="item-wrap" ng-if="speakers.length">{{ 'NARRATORS' | translate }}: {{speakers}}</p>
+      </div>
+    </div>
+    <div class="item item-divider">{{bookName}}</div>
+                <!-- Download button -->
+    <ion-item class="item-avatar bible" type="item-text-wrap" ng-repeat="chapter in filteredItems = api.data" ng-controller="BibleCardCtrl">
+    <!-- <div class="item-text-wrap">{{chapter}}</div> -->
+      
+      <img src="images/speakers/bible.png" class="bible-image-display"/>
+      <div class="bible-icons">
+        <i ng-click="playNow({{chapter}})" class="bible icon ion-ios-play fonte-play"></i>  
+        <dwn-button ng-hide="chapters.fileUrlLocalPath" value="{{chapter}}" class="bible-download icon" case-compare="bible"></dwn-button>
+      </div>
+      <h2 class="padding" ng-click="playNow({{chapter}})" >{{bookName}}
+        <span class="bible-chapter">
+          <span class="bible-spacing"><br/>
+          </span>
+          {{'BOOK_CHAPTER' | translate}}
+        </span> {{chapter.chapter_id}}
+      </h2>
+	    
+      <!-- Name of language. Note to self - find less complicated way to do this -->
+      <p ng-if="settings.lang === 'pt'" class="bible language-display" ng-click="playNow({{chapter}})" >{{settings.rLanguage.pt_language}}</p>
+	    <p ng-if="settings.lang === 'en'" class="bible language-display" ng-click="playNow({{chapter}})" >{{settings.rLanguage.en_language}}</p>
+
+
+      <!-- Play button -->
+       
+      
+
+
+    </ion-item>
+  </ion-content>  
+</ion-view>
