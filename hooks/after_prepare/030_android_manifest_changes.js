@@ -1,7 +1,7 @@
     module.exports = function (context) {
 
 
- var permissionsToRemove = [ "READ_PHONE_STATE", "SEND_SMS", "ACCESS_FINE_LOCATION", "ACCESS_COARSE_LOCATION" ];
+ var permissionsToRemove = [ "READ_PHONE_STATE", "SEND_SMS", "ACCESS_FINE_LOCATION" ];
 
 
     var fs = require('fs');
@@ -18,7 +18,7 @@ var manifestFile = path.join(platformRoot, 'AndroidManifest.xml');
 
         var insertAt = data.indexOf("</manifest>");
 
-        var optionalFeatures = "<uses-feature android:name=\"android.hardware.LOCATION\" android:required=\"false\"/><uses-feature android:name=\"android.hardware.location.NETWORK\" android:required=\"false\"/>";
+        var optionalFeatures = "<uses-feature android:name=\"android.hardware.LOCATION\" android:required=\"false\" /><uses-feature android:name=\"android.hardware.location.NETWORK\" android:required=\"false\"/><uses-feature android:name=\"android.hardware.location.gps\" android:required=\"false\"/>";
 
         // var result = data.slice(0, insertAt) + optionalFeatures + data.slice(insertAt);
 

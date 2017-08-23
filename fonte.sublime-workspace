@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"fonte",
+				"fonteFns"
+			],
+			[
 				"target",
 				"targetPath"
 			],
@@ -128,37 +132,82 @@
 	"buffers":
 	[
 		{
-			"file": "hooks/after_prepare/030_android_manifest_changes.js",
-			"settings":
-			{
-				"buffer_size": 1590,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
 			"file": "config.xml",
 			"settings":
 			{
-				"buffer_size": 8142,
+				"buffer_size": 8254,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "www/index.html",
+			"file": "/C/wamp/www/fonte-saved/platforms/android/AndroidManifest.xml",
 			"settings":
 			{
-				"buffer_size": 9296,
-				"line_ending": "Windows"
+				"buffer_size": 2894,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "plugins/cordova-plugin-music-controls/src/android/MusicControlsNotification.java",
+			"settings":
+			{
+				"buffer_size": 7407,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
 			}
 		},
 		{
 			"file": "platforms/android/AndroidManifest.xml",
 			"settings":
 			{
-				"buffer_size": 3459,
+				"buffer_size": 3621,
 				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "hooks/after_prepare/030_android_manifest_changes.js",
+			"settings":
+			{
+				"buffer_size": 1654,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "www/js/services.js",
+			"settings":
+			{
+				"buffer_size": 14242,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "Searching 415 files for \"fonteFns.playNow\"\n\nC:\\wamp\\www\\fonte\\www\\js\\main-controllers.js:\n  515        $rootScope.$broadcast('AUDIO_SOURCE_DATA');  \n  516      }\n  517:   };//fonteFns.playNow;\n  518  }])\n  519  \n\nC:\\wamp\\www\\fonte\\www\\js\\page-controllers.js:\n   44        $rootScope.$broadcast('AUDIO_SOURCE_DATA');  \n   45      }\n   46:   };//fonteFns.playNow;\n   47    $scope.download = function(){};\n   48    $scope.sortingBy = \"hits\";\n   ..\n  403        $rootScope.$broadcast('AUDIO_SOURCE_DATA');  \n  404      }\n  405:   };//fonteFns.playNow;\n  406    $scope.wordLength = window.innerWidth - 220;\n  407    $scope.page = 'teaching';\n  ...\n  886        }\n  887  \n  888:   };//fonteFns.playNow;\n  889  \n  890  \n\n4 matches across 2 files\n\n\nSearching 415 files for \"$on('AUDIO\"\n\nC:\\wamp\\www\\fonte\\www\\js\\main-controllers.js:\n  731        };\n  732  \n  733:       $scope.$on('AUDIO_SOURCE_DATA', function() {\n  734          message.console(\"broadcast of AUDIO_SOURCE_DATA caught\");\n  735          controller.config.playerType = 'audio';\n\n1 match in 1 file\n\n\nSearching 415 files for \"fonteFns\"\n\nC:\\wamp\\www\\fonte\\www\\js\\main-controllers.js:\n  515        $rootScope.$broadcast('AUDIO_SOURCE_DATA');  \n  516      }\n  517:   };//fonteFns.playNow;\n  518  }])\n  519  \n\nC:\\wamp\\www\\fonte\\www\\js\\page-controllers.js:\n    4  .controller('SermonsCtrl', ['$scope', '$sce', '$rootScope', 'playlistService', 'message', function($scope, $sce, $rootScope, playlistService, message) {\n    5    //Teaching page controller\n    6:   //fonteFns\n    7    message.gaView(\"Teachings\");\n    8    $(\".waiting\").hide();\n    .\n   44        $rootScope.$broadcast('AUDIO_SOURCE_DATA');  \n   45      }\n   46:   };//fonteFns.playNow;\n   47    $scope.download = function(){};\n   48    $scope.sortingBy = \"hits\";\n   ..\n  328  \n  329  //Sermon Details\n  330: .controller('SDetailCtrl', ['$sce', '$scope', '$http', 'playlistService', '$state', 'getId', '$rootScope', 'message', 'fonteFns',\n  331:   function($sce, $scope, $http, playlistService, $state, getId, $rootScope, message, fonteFns){\n  332    message.gaView(\"Teaching page \" + $state.params.teachingId);\n  333    var teachingId = $state.params.teachingId;\n  ...\n  401        playlistService.setAudioPlayList([playList]);\n  402        playlistService.setChapter(1);\n  403:       fonteFns.countHit('teaching', teaching.id);\n  404        $rootScope.$broadcast('AUDIO_SOURCE_DATA');  \n  405      }\n  406:   };//fonteFns.playNow;\n  407    $scope.wordLength = window.innerWidth - 220;\n  408    $scope.page = 'teaching';\n  ...\n  667    message.console(\"BibleBookCtrl called\");\n  668    //$ionicLoading.show();\n  669:   //, 'fonteFns'\n  670    settings = $rootScope.settings;\n  671  \n  ...\n  887        }\n  888  \n  889:   };//fonteFns.playNow;\n  890  \n  891  \n\nC:\\wamp\\www\\fonte\\www\\js\\services.js:\n  185      };\n  186  })\n  187: .service('fonteFns', ['$translate', '$http', '$rootScope', function($translate, $http, $rootScope) {\n  188      //this.languages = settings.languages;\n  189:     var fonteFns = this;\n  190      settings = $rootScope.settings;\n  191:     fonteFns.countHit = function(type, id) {\n  192          $http.get('http://api.fontedavida.org/' + type + '/hit?id=' + id).success(function(data) {\n  193            console.log(\"hit added, type, ID = \", type, id);\n  ...\n  200        }\n  201  \n  202:     fonteFns.playNow = function(selectedAudio){\n  203        if(typeof analytics !== \"undefined\") {\n  204          analytics.trackEvent('Player Started', selectedAudio.en_title, settings.rLanguage.en_language);\n  ...\n  212        //count hit on the teaching and not the Bibles\n  213        if(selectedAudio.id !== undefined) {\n  214:         fonteFns.countHit(selectedAudio.id);  \n  215        } else {\n  216          // console.log(\"ID'd as Bible: no hit counted\");\n\n14 matches across 3 files\n",
+			"settings":
+			{
+				"buffer_size": 3824,
+				"line_ending": "Windows",
+				"name": "Find Results",
+				"scratch": true
+			}
+		},
+		{
+			"file": "www/js/main-controllers.js",
+			"settings":
+			{
+				"buffer_size": 28535,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "www/js/page-controllers.js",
+			"settings":
+			{
+				"buffer_size": 33004,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
 			}
 		}
 	],
@@ -203,27 +252,32 @@
 	"expanded_folders":
 	[
 		"/C/wamp/www/fonte",
+		"/C/wamp/www/fonte/hooks",
+		"/C/wamp/www/fonte/hooks/after_prepare",
 		"/C/wamp/www/fonte/www",
-		"/C/wamp/www/fonte/www/ajax",
-		"/C/wamp/www/fonte/www/css",
 		"/C/wamp/www/fonte/www/js",
-		"/C/wamp/www/fonte/www/templates",
-		"/C/wamp/www/fonte/www/translation"
+		"/C/wamp/www/fonte/www/templates"
 	],
 	"file_history":
 	[
-		"/C/wamp/www/test_connections.php",
+		"/C/Users/Jon/Downloads/fonte.svg",
+		"/C/wamp/www/fonte/www/templates/info-teacher.html",
+		"/C/wamp/www/fonte/www/config.xml",
+		"/C/Users/Jon/AppData/Local/Temp/fz3temp-2/team.json",
 		"/C/wamp/www/fonte/www/js/main-controllers.js",
+		"/C/wamp/www/fonte/.gitignore",
+		"/C/wamp/www/fonte-saved/platforms/android/AndroidManifest.xml",
+		"/C/wamp/www/fonte/hooks/after_prepare/030_android_manifest_changes.js",
 		"/C/wamp/www/fonte/www/js/page-controllers.js",
+		"/C/wamp/www/fonte/www/js/directives.js",
+		"/C/wamp/www/fonte/www/js/services.js",
+		"/C/wamp/www/test_connections.php",
 		"/C/Users/Jon/Downloads/test.php",
 		"/C/Users/Jon/AppData/Local/Temp/fz3temp-2/_form.php",
 		"/C/Users/Jon/AppData/Local/Temp/fz3temp-2/index.php",
 		"/C/wamp/www/test.php",
 		"/C/wamp/www/fonte/www/templates/resource-resourcedetail.html",
-		"/C/wamp/www/fonte/www/js/services.js",
-		"/C/wamp/www/fonte/hooks/after_prepare/030_android_manifest_changes.js",
 		"/C/wamp/www/fonte/www/templates/tab-download.html",
-		"/C/wamp/www/fonte/www/js/directives.js",
 		"/C/wamp/www/fonte/www/index.html",
 		"/C/wamp/www/fonte/www/ajax/country.json",
 		"/C/wamp/www/fonte/package.json",
@@ -232,7 +286,6 @@
 		"/C/wamp/www/fonte/www/js/app.js",
 		"/C/wamp/www/fonte-saved/www/js/directives.js",
 		"/C/wamp/www/fonte/platforms/android/AndroidManifest.xml",
-		"/C/wamp/www/fonte-saved/platforms/android/AndroidManifest.xml",
 		"/C/wamp/www/fonte/www/js/filters.js",
 		"/C/wamp/www/fonte/hooks/after_build/afterBuild.js",
 		"/C/wamp/www/fonte/plugins/com.filfatstudios.musiccontroller/plugin.xml",
@@ -265,7 +318,6 @@
 		"/C/wamp/www/fonte/www/templates/videogular-player.html",
 		"/C/wamp/www/iris-app/www/translation/pt.json",
 		"/C/Users/Jon/.ssh/putty.ppk",
-		"/C/wamp/www/fonte/www/config.xml",
 		"/C/wamp/www/fonte/www/translation/pt.json",
 		"/C/wamp/www/fonte/res/native/android/res/values/styles.xml",
 		"/C/wamp/www/fonte/www/templates/info-team.html",
@@ -335,11 +387,7 @@
 		"/C/wamp/www/fonte_api/html/views/teaching/_search.php",
 		"/C/wamp/www/fonte/www/templates/bible-book.html",
 		"/C/wamp/www/fonte_api/html/controllers/TeachingController.php",
-		"/C/wamp/www/fonte_api/html/views/resource/_search.php",
-		"/C/Users/Jon/Downloads/Sean contacts 03.csv",
-		"/C/wamp/www/fonte_api/html/views/site/index.php",
-		"/C/wamp/www/fonte_api/html/models/Resource.php",
-		"/C/wamp/www/fonte_api/html/controllers/ResourceController.php"
+		"/C/wamp/www/fonte_api/html/views/resource/_search.php"
 	],
 	"find":
 	{
@@ -350,6 +398,10 @@
 		"height": 117.0,
 		"where_history":
 		[
+			"C:\\wamp\\www\\fonte\\www\\",
+			"C:\\wamp\\www\\fonte\\www\\js",
+			"C:\\wamp\\www\\fonte\\plugins\\cordova-plugin-music-controls",
+			"C:\\wamp\\www\\fonte\\node_modules",
 			"C:\\wamp\\www\\fonte\\www\\",
 			"C:\\wamp\\www\\fonte\\www\\js",
 			"C:\\wamp\\www\\fonte\\www\\",
@@ -391,6 +443,19 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"fonteFns",
+			"$on('AUDIO",
+			"fonteFns.playNow",
+			"fonteFns.countHit",
+			"teaching/hit",
+			"hit",
+			"14",
+			"translate.use",
+			"idnt",
+			"146.148.29.150",
+			"hit",
+			".addAction",
+			"Builder.addAction",
 			"console.log",
 			"countryChange",
 			"changedCountry",
@@ -505,20 +570,7 @@
 			"$connection",
 			"download_counter",
 			"LinkAllBehavior",
-			"api.fontedavida.org",
-			"Apply Now",
-			"hit",
-			"col col-sm-3",
-			"flag-2x",
-			"  ",
-			"biblia.co.mz",
-			"display",
-			"sermons",
-			"$",
-			"biblia.co.mz",
-			"fontedavida",
-			"--",
-			"biblia.co.mz"
+			"api.fontedavida.org"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -565,60 +617,24 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 4,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "hooks/after_prepare/030_android_manifest_changes.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1590,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1589,
-								1590
-							]
-						],
-						"settings":
-						{
-							"origPos":
-							[
-								0.0,
-								302.0
-							],
-							"syncScroll": false,
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 302.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
 					"file": "config.xml",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 8142,
+						"buffer_size": 8254,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								256,
-								256
+								1718,
+								1718
 							]
 						],
 						"settings":
@@ -626,7 +642,7 @@
 							"origPos":
 							[
 								0.0,
-								1679.0
+								0.0
 							],
 							"syncScroll": false,
 							"syntax": "Packages/XML/XML.sublime-syntax",
@@ -641,62 +657,20 @@
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "www/index.html",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 9296,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2690,
-								2729
-							]
-						],
-						"settings":
-						{
-							"origPos":
-							[
-								0.0,
-								1119.0
-							],
-							"syncScroll": false,
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1119.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
-			]
-		},
-		{
-			"selected": 0,
-			"sheets":
-			[
-				{
-					"buffer": 3,
-					"file": "platforms/android/AndroidManifest.xml",
+					"buffer": 1,
+					"file": "/C/wamp/www/fonte-saved/platforms/android/AndroidManifest.xml",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3459,
+						"buffer_size": 2894,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3321,
-								3333
+								2411,
+								2411
 							]
 						],
 						"settings":
@@ -704,7 +678,7 @@
 							"origPos":
 							[
 								0.0,
-								776.0
+								356.0
 							],
 							"syncScroll": false,
 							"syntax": "Packages/XML/XML.sublime-syntax",
@@ -712,10 +686,348 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
+						"translation.y": 256.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "plugins/cordova-plugin-music-controls/src/android/MusicControlsNotification.java",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7407,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								674,
+								674
+							]
+						],
+						"settings":
+						{
+							"origPos":
+							[
+								0.0,
+								0.0
+							],
+							"syncScroll": false,
+							"syntax": "Packages/Java/Java.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "platforms/android/AndroidManifest.xml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3621,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1275,
+								1275
+							]
+						],
+						"settings":
+						{
+							"origPos":
+							[
+								0.0,
+								1007.0
+							],
+							"syncScroll": false,
+							"syntax": "Packages/XML/XML.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 647.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "hooks/after_prepare/030_android_manifest_changes.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1654,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1093,
+								1093
+							]
+						],
+						"settings":
+						{
+							"origPos":
+							[
+								0.0,
+								0.0
+							],
+							"syncScroll": false,
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "www/js/services.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 14242,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								8087,
+								8087
+							]
+						],
+						"settings":
+						{
+							"origPos":
+							[
+								0.0,
+								3491.0
+							],
+							"syncScroll": false,
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 3482.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3824,
+						"regions":
+						{
+							"match":
+							{
+								"flags": 112,
+								"regions":
+								[
+									[
+										175,
+										191
+									],
+									[
+										344,
+										360
+									],
+									[
+										530,
+										546
+									],
+									[
+										679,
+										695
+									],
+									[
+										869,
+										879
+									],
+									[
+										1223,
+										1231
+									],
+									[
+										1514,
+										1522
+									],
+									[
+										1683,
+										1691
+									],
+									[
+										1942,
+										1950
+									],
+									[
+										2045,
+										2053
+									],
+									[
+										2300,
+										2308
+									],
+									[
+										2429,
+										2437
+									],
+									[
+										2639,
+										2647
+									],
+									[
+										2740,
+										2748
+									],
+									[
+										2854,
+										2862
+									],
+									[
+										3010,
+										3018
+									],
+									[
+										3081,
+										3089
+									],
+									[
+										3334,
+										3342
+									],
+									[
+										3672,
+										3680
+									]
+								],
+								"scope": ""
+							}
+						},
+						"selection":
+						[
+							[
+								1056,
+								1056
+							]
+						],
+						"settings":
+						{
+							"detect_indentation": false,
+							"line_numbers": false,
+							"origPos":
+							[
+								0.0,
+								0.0
+							],
+							"output_tag": 3,
+							"result_base_dir": "",
+							"result_file_regex": "^([^ \t].*):$",
+							"result_line_regex": "^ +([0-9]+):",
+							"scroll_past_end": true,
+							"syntax": "Packages/Default/Find Results.hidden-tmLanguage"
+						},
+						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "www/js/main-controllers.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 28535,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								24575,
+								24575
+							]
+						],
+						"settings":
+						{
+							"origPos":
+							[
+								0.0,
+								14512.0
+							],
+							"syncScroll": false,
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 14512.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "www/js/page-controllers.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 33004,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								12077,
+								12077
+							]
+						],
+						"settings":
+						{
+							"origPos":
+							[
+								0.0,
+								6370.0
+							],
+							"syncScroll": false,
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 6370.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
 					"type": "text"
 				}
 			]
@@ -738,18 +1050,11 @@
 				0,
 				1,
 				1
-			],
-			[
-				1,
-				0,
-				2,
-				1
 			]
 		],
 		"cols":
 		[
 			0.0,
-			0.54472622734,
 			1.0
 		],
 		"rows":
