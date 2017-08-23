@@ -327,8 +327,8 @@ angular.module('page.controllers', ['pascalprecht.translate', 'jett.ionic.filter
 }])
 
 //Sermon Details
-.controller('SDetailCtrl', ['$sce', '$scope', '$http', 'playlistService', '$state', 'getId', '$rootScope', 'message', 
-  function($sce, $scope, $http, playlistService, $state, getId, $rootScope, message){
+.controller('SDetailCtrl', ['$sce', '$scope', '$http', 'playlistService', '$state', 'getId', '$rootScope', 'message', 'fonteFns',
+  function($sce, $scope, $http, playlistService, $state, getId, $rootScope, message, fonteFns){
   message.gaView("Teaching page " + $state.params.teachingId);
   var teachingId = $state.params.teachingId;
   $('.waiting').show();
@@ -400,6 +400,7 @@ angular.module('page.controllers', ['pascalprecht.translate', 'jett.ionic.filter
     
       playlistService.setAudioPlayList([playList]);
       playlistService.setChapter(1);
+      fonteFns.countHit('teaching', teaching.id);
       $rootScope.$broadcast('AUDIO_SOURCE_DATA');  
     }
   };//fonteFns.playNow;

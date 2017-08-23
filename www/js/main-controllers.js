@@ -440,7 +440,7 @@ angular.module('main.controllers', ['pascalprecht.translate', 'jett.ionic.filter
 $scope.resourceOpen = function(resourceurl, id) {
   message.console("resourceOpen called from DownloadCtrl", resourceurl, id);
 
-  $http.get('http://146.148.29.150/fonte/api/html/web/resource/hit?id=' + id).success(function(data) {
+  $http.get('http://api.fontedavida.org/resource/hit?id=' + id).success(function(data) {
     message.console("resource hit added, ID = ", id);
   }).error(function(error) {
     message.error("Unable to count hit", error);
@@ -664,7 +664,7 @@ $scope.downloadThis = function(title, url, type, folder, extension) {
         enableVol();
         $timeout(function() {
             controller.API.play();
-            message.console("play begun with API: ", controller.API);
+            message.console("play begun with API");
             
           }, controller.config.waitTime);
       };

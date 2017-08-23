@@ -186,20 +186,11 @@ angular.module('starter.services', [])
 })
 .service('fonteFns', ['$translate', '$http', '$rootScope', function($translate, $http, $rootScope) {
     //this.languages = settings.languages;
+    var fonteFns = this;
     settings = $rootScope.settings;
-    
-
-    this.playNow = function(selectedAudio){
-      if(typeof analytics !== "undefined") {
-        analytics.trackEvent('Player Started', selectedAudio.en_title, settings.rLanguage.en_language);
-      };        
-      //Testing statements
-      // console.log("scope.playNow called");
-
-      //count hits funtion
-      countHit = function(id) {
-        $http.get('http://146.148.29.150/fonte/api/html/web/teaching/hit?id=' + id).success(function(data) {
-          // console.log("hit added, ID = ", id);
+    fonteFns.countHit = function(type, id) {
+        $http.get('http://api.fontedavida.org/' + type + '/hit?id=' + id).success(function(data) {
+          console.log("hit added, type, ID = ", type, id);
         }).error(function(error) {
           // console.log("unable to count hit: ", id);
           if (typeof analytics !== "undefined"){
@@ -208,9 +199,19 @@ angular.module('starter.services', [])
         });
       }
 
+    fonteFns.playNow = function(selectedAudio){
+      if(typeof analytics !== "undefined") {
+        analytics.trackEvent('Player Started', selectedAudio.en_title, settings.rLanguage.en_language);
+      };        
+      //Testing statements
+      // console.log("scope.playNow called");
+
+      //count hits funtion
+      
+
       //count hit on the teaching and not the Bibles
       if(selectedAudio.id !== undefined) {
-        countHit(selectedAudio.id);  
+        fonteFns.countHit(selectedAudio.id);  
       } else {
         // console.log("ID'd as Bible: no hit counted");
       }

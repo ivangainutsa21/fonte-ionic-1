@@ -53,9 +53,9 @@ angular.module('directives', ['pascalprecht.translate', 'jett.ionic.filter.bar']
         };
       function countHit(id,type) {
         if(type == "sermons") {
-          hitURL = 'http://146.148.29.150/fonte/api/html/web/teaching/dhit?id=';
+          hitURL = 'http://api.fontedavida.org/teaching/dhit?id=';
         } else if(type == "resources") {
-          hitURL = 'http://146.148.29.150/fonte/api/html/web/resource/dhit?id=';
+          hitURL = 'http://api.fontedavida.org/resource/dhit?id=';
         } else {
           message.error("Hit counter", "incorrect type variable");
         }
