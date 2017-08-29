@@ -43,6 +43,7 @@
   <preference name="SplashScreenDelay" value="5000"/>
   <preference name="AutoHideSplashScreen" value="false"/>
   <preference name="ShowSplashScreenSpinner" value="false"/>
+  <preference name="AllowInlineMediaPlayback" value="true" />
   <feature name="StatusBar">
     <param name="ios-package" onload="false" value="CDVStatusBar"/>
   </feature>
