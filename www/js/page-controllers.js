@@ -524,6 +524,7 @@ angular.module('page.controllers', ['pascalprecht.translate', 'jett.ionic.filter
     //message.console('SendMail called:');
     message.gaEvent("Mail", "Sent", formType);
 
+
     if (formType == 'copyright') {
       var email = {
         method: 'POST',
@@ -531,40 +532,65 @@ angular.module('page.controllers', ['pascalprecht.translate', 'jett.ionic.filter
         headers: {
          'Content-Type': 'application/x-www-form-urlencoded'
         },
-        data: $.param({ 
-          'name'     : $('input[name=name]').val(),
-          'email'    : $('input[name=email]').val(),
-          'organization' : $('input[name=organization]').val(),
-          'teaching' : $('input[name=teaching]').val(),
-          'issue' : $('input[name=issue]').val()
+        data:$.param({
+          'resources' : $('input[name=resources]').val(),
+          'idioma' : $('input[name=idioma]').val(),
+          
+          'name' : $('input[name=nome]').val(),
+          'email' : $('input[name=email]').val(),
+          'telefone' : $('input[name=telefone]').val(),
+          'pais' : $('input[name=pais]').val(),
+          'organizacao' : $('input[name=organizacao]').val(),
+          
+          'lideranca' : $('select[name=lideranca]').val()
         })
       }
     }
+
+
+
     else if (formType == 'partnership') {
+      //collect the values of checkboxes.
+      var recursos = $('input[name=resources]');
+
+      //initializing the values of checkboxes as empty.
+       var recurso1 = ''; var recurso2 = '';  var recurso3 = '';
+
+      //verify if the checkboxes were CHECKED by the user. if cheched: set new values for variables. 
+       if(recursos[0].checked) var recurso1 = "Sermoes";
+       if(recursos[1].checked) var recurso2 = "Livros";
+       if(recursos[2].checked) var recurso3 = "Biblia(Audio)";
+       
+       //join the values of checked resources.
+       var todos_recursos = recurso1+' '+recurso2+' '+recurso3;
+
       var email = {
         method: 'POST',
-        url: 'http://api.fontedavida.org/postmail.php',
+        url: 'http://api.fontedavida.org/postmail_02.php',
         headers: {
          'Content-Type': 'application/x-www-form-urlencoded'
         },
-        data: $.param({ 
-          'name'     : $('input[name=name]').val(),
-          'email'    : $('input[name=email]').val(),
-          'organization' : $('input[name=organization]').val(),
-          'phone' : $('input[name=phone]').val(),
-          'details' : $('input[name=details]').val(),
-          'languages' : $('input[name=languages]').val()
-        }) 
+        data:$.param({
+          'resources' : todos_recursos,
+          'idioma' : $('input[name=idioma]').val(),
+          'idiomadeform' : $rootScope.settings.lang,
+          'name' : $('input[name=nome]').val(),
+          'email' : $('input[name=email]').val(),
+          'telefone' : $('input[name=telefone]').val(),
+          'pais' : $('input[name=pais]').val(),
+          'organizacao' : $('input[name=organizacao]').val(),
+          'lideranca' : $('select[name=lideranca]').val(),
+       })
       }
     }
 
-    $http(email).then(function(){
+    $http(email).then(function(data){
       //message.console("email success", email);
       $window.location.href = '#/tab/dash';
       message.alert('EMAIL_SUCCESS');
     }, 
     function(){
-      message.alert('EMAIL_FAIL');
+      message.alert('EMAIL_FAIL' + data);
     });
   }
 }])
