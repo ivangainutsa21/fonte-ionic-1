@@ -3,77 +3,39 @@
   <ion-content class="splash padding" on-swipe-right="goBack()" on-swipe-left="goForward()" ng-controller="SettingsCtrl">
 
   <div id="fp-div">
-  <div id="fp-regular" class="fp">
-    <div class="fp-wrap" style="display:none">
-      <div class="row">
-      <div class="col col-50">
-        <a class="button icon ion-ios-book" href="#/tab/bible"></a><h2>{{'TAB_BIBLES' | translate}}</h2>
-      </div>
-      <div class="col col-50">
-        <a class="button icon ion-mic-b" href="#/tab/sermons"></a><h2>{{'TAB_SERMONS' | translate}}</h2>
-      </div>
-      </div>
-      <div class="row">
-      <div class="col col-50">
-        <a class="button icon ion-ios-folder" href="#/tab/resources"></a><h2>{{'TAB_RESOURCES' | translate}}</h2>
-      </div>
-      <div class="col col-50">
-        <a class="button icon ion-ios-gear" href="#/tab/bible"></a><h2>{{'TAB_ABOUT' | translate}}</h2>
-      </div>
-    </div></div>
-  </div>
-  <!--<div id="fp-1" class="fp">
-    <div class="fp-wrap">
-          <form name="languageForm">
-            <h3 class="padding">{{'SETTINGS_CLANGUAGE' | translate}}</h3>
-            <ion-radio type="radio" ng-model="settings.lang" ng-change="changeLanguage(settings.lang)" ng-selected="settings.lang == 'pt'" value="pt">
-              {{'SETTINGS_PT' | translate}}
-            </ion-radio>
-            <ion-radio type="radio" ng-model="settings.lang" ng-change="changeLanguage(settings.lang)" ng-selected="settings.lang == 'en'" value="en">
-              {{'SETTINGS_EN' | translate}}
-            </ion-radio>
-            <ion-radio type="radio" ng-model="settings.lang" ng-change="changeLanguage(settings.lang)" ng-selected="settings.lang == 'fr'" value="fr">
-              {{'SETTINGS_FR' | translate}}
-            </ion-radio>
-            <div style="float:right"><a class="button icon-right ion-chevron-right button-clear button-dark" ng-click="next(1)">{{'NEXT' | translate}}</a></div>
-            <div style="clear:both"></div>
-          </form>
-    </div>
-  </div>-->
+    <div id="fp-2" class="fp" ng-controller="CountryCtrl">
+      <h3 class="padding"></h3>
+      <h2 class="country-header">{{'SELECT_COUNTRY' | translate}}</h2>
+      <div class="country-list">
+          <div ng-repeat="country in countries" class="flag-div" >
+            <div  class="flag-inner" ng-click="countryChange({{country.id}})">
+              <div><span class="flag flag-{{country.code}} flag-4x"></span>
+              <h4 ng-class="">{{country.native_name}}</h4>
+            </div></div></div>
+          <div class="flag-div"  ng-click="countryChange('')">
+          <div  class="flag-inner" >
+            <div><span class="flag flag-oth flag-4x"></span></div>
+            <h4 ng-class="">Other</h4>
+          </div>
+          </div>
+          <div style="clear:both"></div>
 
-  <div id="fp-2" class="fp" ng-controller="CountryCtrl">
-    <h3 class="padding"></h3>
-    <h2 class="country-header">{{'SELECT_COUNTRY' | translate}}</h2>
-    <div class="country-list">
-        <div ng-repeat="country in countries" class="flag-div" >
-          <div  class="flag-inner" ng-click="countryChange({{country.id}})">
-            <div><span class="flag flag-{{country.code}} flag-4x"></span>
-            <h4 ng-class="">{{country.native_name}}</h4>
-          </div></div></div>
-        <div class="flag-div"  ng-click="countryChange('')">
-        <div  class="flag-inner" >
-          <div><span class="flag flag-oth flag-4x"></span></div>
-          <h4 ng-class="">Other</h4>
+      </div>
+    </div>
+    
+
+      <div id="fp-3" class="fp">
+        <div class="branding">
+            <img src="images/logo-white.png" alt="Fonte da Vida Logo">
+            <div class="tagline" style="color:white">{{'TAG_LINE' | translate}}</div>
         </div>
-        </div>
-        <div style="clear:both"></div>
-
-    </div>
-  </div>
-  
-
-    <div id="fp-3" class="fp">
-      <div class="branding">
-          <img src="images/logo-white.png" alt="Fonte da Vida Logo">
-          <div class="tagline" style="color:white">{{'TAG_LINE' | translate}}</div>
+        <a class="button button-positive button-block button-large icon-left ion-ios-book" href="#/tab/bible"> {{'TAB_BIBLES' | translate}}
+        </a>
+        <a class="button button-calm button-block button-large icon-left ion-mic-b" href="#/tab/sermons"> {{'TAB_SERMONS' | translate}}
+        </a>
+        <a class="button button-block button-large icon-left ion-ios-folder" href="#/tab/resources"> {{'TAB_RESOURCES' | translate}}
+        </a>
       </div>
-      <a class="button button-positive button-block button-large icon-left ion-ios-book" href="#/tab/bible"> {{'TAB_BIBLES' | translate}}
-      </a>
-      <a class="button button-calm button-block button-large icon-left ion-mic-b" href="#/tab/sermons"> {{'TAB_SERMONS' | translate}}
-      </a>
-      <a class="button button-block button-large icon-left ion-ios-folder" href="#/tab/resources"> {{'TAB_RESOURCES' | translate}}
-      </a>
-    </div>
       <!--
       </div>
     <!--<div class="fp-wrap">
@@ -88,7 +50,6 @@
             <div style="clear:both"></div>
         </form>
     </div>-->
-  </div>
   </div>
 <!--
     <h2 class="title">List</h2>
