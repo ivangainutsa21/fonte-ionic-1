@@ -530,7 +530,8 @@ $scope.downloadThis = function(title, url, type, folder, extension) {
     $("#fp-div").animate({
       'left': number * -2000 + "px"
     }, 400, 'linear');
-    $ionicScrollDelegate.scrollTop(true);  
+    $ionicScrollDelegate.scrollTop(true);
+    $("#fp-2").fadeOut(800);
   }
 
   if($rootScope.settings.country != "") {
