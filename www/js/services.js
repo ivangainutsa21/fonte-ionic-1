@@ -367,7 +367,7 @@ angular.module('starter.services', [])
   //subscribe to PUSH notifications with the given topic
   messageService.subscribeToTopic = function(topic) {
     var token = $rootScope.settings.token;
-    console.log("subscribeTokenToTopic called: " + topic);
+    messageService.gaEvent('Notifications', 'Subscription', topic);
     $http.get('http://api.fontedavida.org:3000/subscribe/'+config.messagingSenderId+'/'+token+'/'+topic).then(function(data) {
       if(data.response < 200 || data.response >= 400) {
         console.log("error response: ", data.response);
@@ -379,7 +379,7 @@ angular.module('starter.services', [])
 
   messageService.unsubscribeFromTopic = function(topic) {
     var token = $rootScope.settings.token;
-    console.log("unsubscribeTokenToTopic called: ", topic);
+    messageService.gaEvent('Notifications', 'Unsubscription', topic);
     $http.get('http://fontedavida.org:3000/unsubscribe/'+config.messagingSenderId+'/'+token+'/'+topic).then(function(data) {
       if (data.status < 200 || data.status >= 400) {
         throw 'Error unsubscribing from topic: '+data.status + ' - ' + data.text();
