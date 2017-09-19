@@ -517,7 +517,7 @@ angular.module('page.controllers', ['pascalprecht.translate', 'jett.ionic.filter
 }])
 
 //Any page that has a form is controlled here. Ex: sending email, organization signup, etc.
-.controller('FormCtrl', [ '$http', '$scope', '$window', '$translate', 'message', function($http, $scope, $window, $translate, message){
+.controller('FormCtrl', [ '$http', '$scope', '$window', '$translate', 'message', '$rootScope', function($http, $scope, $window, $translate, message, $rootScope){
   //message.console("FormCtrl called");
   this.sendMail = function(emailInfo, formType) {
 

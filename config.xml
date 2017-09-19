@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <widget id="com.equipmozambique.fontedavida" version="3.5.5" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:gap="http://phonegap.com/ns/1.0" versionCode="30505">
-  <name>&#xD;
-    Fonte da Vida&#xD;
+  <name>&#xD;&#xD;
+    Fonte da Vida&#xD;&#xD;
   </name>
-  <description>&#xD;
-        Biblia e Sermoes na sua Língua!&#xD;
+  <description>&#xD;&#xD;
+        Biblia e Sermoes na sua Língua!&#xD;&#xD;
   </description>
-  <author email="jon@equipmoz.org" href="http://equipmoz.org">&#xD;
-      Jon Reinagel&#xD;
+  <author email="jon@equipmoz.org" href="http://equipmoz.org">&#xD;&#xD;
+      Jon Reinagel&#xD;&#xD;
   </author>
   <content src="index.html"/>
   <access origin="*" subdomains="true"/>
