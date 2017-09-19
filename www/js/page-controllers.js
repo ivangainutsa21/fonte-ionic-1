@@ -100,8 +100,8 @@ angular.module('page.controllers', ['pascalprecht.translate', 'jett.ionic.filter
 
 
 .controller('RLangCtrl', ['$scope', '$rootScope', '$filter', 'message', 'ApiServe', function($scope, $rootScope, $filter, message, ApiServe) {
-  //Limits the number of languages getting piped through to the rlanguage selector
   
+  //Limits the number of languages getting piped through to the rlanguage selector
   function languageFilter() {
     var languageList;
     if($rootScope.settings.countries != undefined) {
@@ -112,16 +112,14 @@ angular.module('page.controllers', ['pascalprecht.translate', 'jett.ionic.filter
 
     message.console("languageList: ", languageList, languageList.length);
 
+    //For each ID, find the language that is associated
     output = [];
     for (var i = 0; i < languageList.length; i++) {
       out = $filter('filter')($rootScope.settings.languages, {id: languageList[i]})[0];
-      //message.console("Variable out: ", out);
       output.push(out);
     }
-    //message.console("Output after filtered: ", output);
 
-
-    //If Language List is non-existent, we pull all languages
+    //If Language List is non-existent, we pull all languages - otherwise we pull the language we need and apply to the title attribute
     if(languageList.length) {
       message.console("output: ", output);
       for (var i = 0; i < output.length; i++) {
@@ -143,15 +141,14 @@ angular.module('page.controllers', ['pascalprecht.translate', 'jett.ionic.filter
       $scope.languages = $rootScope.settings.languages;
     }
 
-    //message.console("$scope.langauges: ", $scope.languages);
-
     //If old resource language doesn't exist in new country, default to Portuguese
     if($rootScope.settings.rLanguage != undefined) {
-      if($filter('filter')($scope.languages, {id: $rootScope.settings.rLanguageid})[0] != undefined) {
-        //message.console("Language exists in new country; we are fine");
+      if($filter('filter')($scope.languages, {id: $rootScope.settings.rLanguageid}, true)[0] != undefined) {
+        message.console("Language exists in new country; we are fine");
       } else {
-        $rootScope.settings.rLanguageid = 0;
-        $rootScope.settings.rLanguage = $rootScope.settings.languages[0];
+        message.console("potential language issues: $scope.languages: ", $scope.languages);
+        $rootScope.settings.rLanguageid = $scope.languages[0].id;
+        $rootScope.settings.rLanguage = $scope.languages[0];
         //message.console("Language does not exist in new country; changing");
       }
     }
