@@ -103,7 +103,7 @@
                 <h3>{{'SELECT_COUNTRY' | translate}}</h3>
               </div>
 
-              <select ng-model="settings.country" ng-options="country.id as country.native_name for country in settings.countries" ng-change="changedCountry(country)">
+              <select ng-model="settings.country" ng-options="country.id as country.native_name for country in settings.countries | orderBy: 'native_name'" ng-change="changedCountry(country)">
                 <!-- <option ng-repeat="country in settings.countries" value="{{country.id}}">{{country.native_name}}</option> -->
               </select>
             </label>             
@@ -127,7 +127,7 @@
               </div>
               
               <select ng-model="settings.rLanguageid"
-                ng-options="language.id as language.title for language in languages"
+                ng-options="language.id as language.title for language in languages | orderBy: 'title'"
                 
                 >
               </select>

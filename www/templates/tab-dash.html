@@ -7,7 +7,7 @@
       <h3 class="padding"></h3>
       <h2 class="country-header">{{'SELECT_COUNTRY' | translate}}</h2>
       <div class="country-list">
-          <div ng-repeat="country in countries" class="flag-div" >
+          <div ng-repeat="country in countries | orderBy: 'native_name'" class="flag-div" >
             <div  class="flag-inner" ng-click="countryChange({{country.id}})">
               <div><span class="flag flag-{{country.code}} flag-4x"></span>
               <h4 ng-class="">{{country.native_name}}</h4>
