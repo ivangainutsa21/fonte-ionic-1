@@ -1,5 +1,4 @@
 angular.module('starter', ['ionic',
-'ionic.wizard',
 'ionic.service.core',
 'ionic.service.analytics',
 'main.controllers',
