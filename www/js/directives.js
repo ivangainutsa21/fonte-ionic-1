@@ -40,7 +40,7 @@ angular.module('directives', ['pascalprecht.translate', 'jett.ionic.filter.bar']
                                               function($rootScope, $cordovaFileTransfer, $cordovaFileOpener2, downloadService, $window, $cordovaFile, $timeout, $filter, $ionicPopup, $state, $translate, $http, message){
   return {
     restrict: 'AE',
-    template: '<i ng-click="download()" class="icon ion-android-download"></i>',
+    template: '<button class="button button-calm icon-left ion-android-download ng-binding" ng-click="download()">{{"DOWNLOAD" | translate}}</button>',
     link: function(scope, iElement, iAttrs) {
       function showAlert(title, bodyMsg) {
           var alertPopup = $ionicPopup.alert({

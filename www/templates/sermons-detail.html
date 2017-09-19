@@ -20,19 +20,21 @@
                 <span class="item-note" ng-if="settings.lang == 'pt'">{{settings.languages[src.teaching.primary_language_id].pt_language}} <i ng-if="src.teaching.secondary_language_id">/</i> {{settings.languages[src.teaching.secondary_language_id].pt_language}}</span>
             </a>
             </div>
+        </div>
+        
+        <div class="row">
+            <div class="col col-50">
+            <dwn-button class="calm" ng-hide="src.teaching.fileUrlLocalPath" value="{{src.teaching}}" case-compare="sermons" style="margin-top: -30px;font-size: 350%;margin-right:20px;"></dwn-button>
+            </div>
             <div class="col col-50">
                 <button class="button button-calm icon-left ion-ios-play" ng-click="playNow(src.teaching, src.teacher)" style="position:relative;left:3vw;">{{'PLAY' | translate}}</button>
             </div>
-        </div>
-        
-        <div style="margin:1vh 20px 0 0;">
-            <dwn-button class="calm" ng-hide="src.teaching.fileUrlLocalPath" value="{{src.teaching}}" case-compare="sermons" style="margin-top: -30px;font-size: 350%;margin-right:20px;"></dwn-button>
+        </div>    
             
             <!-- Social Sharing buttons - for sometime in the future -->
             <!-- <i class="icon ion-email social-link-button" onclick="var instance = new SocialSharing(); instance.shareViaEmail('Message', 'Subject', 'benf31@outlook.com');"></i>       
             <i class="icon ion-android-textsms social-link-button" onclick="var instance = new SocialSharing(); instance.shareViaSMS('Test SMS', '');"></i>
             <i class="icon ion-social-whatsapp social-link-button" onclick="var instance = new SocialSharing(); instance.shareViaWhatsApp('Digital Signature Maker', null, 'https://play.google.com/store/apps/details?id=com.prantikv.digitalsignaturemaker', null, function(errormsg){alert('Error: Cannot Share');}"></i> -->
-        </div>
         
         <!-- Only show if the teacher is not "various authors" -->
         <info-teacher ng-if="src.teacher.id !== 3" style="margin-top:5px;"></info-teacher>
