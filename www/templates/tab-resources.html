@@ -7,7 +7,7 @@
 	<nothing-here></nothing-here>
 	
 	<ion-list>
-        <ion-item ng-repeat="resource in filteredItems = (resourceList | filter : search_query | rLangFilter:settings | orgFilter | orderBy: '-created_at')" class="resource-card" href="#/tab/resources/resource-{{resource.id}}" ng-controller="ResourceCardCtrl">
+        <ion-item ng-repeat="resource in filteredItems = (resourceList | filter : search_query | rLangFilter:settings | orgFilter | orderBy: '-jonOrder')" class="resource-card" href="#/tab/resources/resource-{{resource.id}}" ng-controller="ResourceCardCtrl">
 	        <row>
 	            <div class="preacher-img col col-25" style="background-image:url({{teacher_photo}}); min-height:100px"/>
 	            	<div class="row" style="height:100%; padding:0;">
