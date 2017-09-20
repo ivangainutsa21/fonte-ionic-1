@@ -71,7 +71,7 @@ angular.module('starter', ['ionic',
     // onError Callback receives a PositionError object
     //
     function onError(error) {
-      console.log("geolocation error");
+      console.log("geolocation error", JSON.stringify(error));
       if (typeof analytics !== 'undefined'){
         window.ga.trackEvent("error", "geolocation", error);
       }

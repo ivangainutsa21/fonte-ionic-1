@@ -40,7 +40,18 @@ angular.module('directives', ['pascalprecht.translate', 'jett.ionic.filter.bar']
                                               function($rootScope, $cordovaFileTransfer, $cordovaFileOpener2, downloadService, $window, $cordovaFile, $timeout, $filter, $ionicPopup, $state, $translate, $http, message){
   return {
     restrict: 'AE',
-    template: '<button class="button button-calm icon-left ion-android-download ng-binding" ng-click="download()">{{"DOWNLOAD" | translate}}</button>',
+    //template: '<button class="button button-calm icon-left ion-android-download ng-binding" ng-click="download()">{{"DOWNLOAD" | translate}}</button>',
+    template: function (tElement, tAttrs) {
+            if (tAttrs) {
+                if (tAttrs.caseCompare === 'sermons' || tAttrs.caseCompare === 'resources') {
+                    return '<button class="button button-calm icon-left ion-android-download ng-binding" ng-click="download()">{{"DOWNLOAD" | translate}}</button>';
+                }
+                if (tAttrs.caseCompare === 'bible') {
+                    return '<i ng-click="download()" class="icon ion-android-download"></i>';
+                }
+            }
+        },
+
     link: function(scope, iElement, iAttrs) {
       function showAlert(title, bodyMsg) {
           var alertPopup = $ionicPopup.alert({

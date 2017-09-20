@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<widget id="com.equipmozambique.fontedavida" version="3.6.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:gap="http://phonegap.com/ns/1.0" versionCode="30601">
-  <name>&#xD;&#xD;
-    Fonte da Vida&#xD;&#xD;
+<widget id="com.equipmozambique.fontedavida" version="3.6.3" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:gap="http://phonegap.com/ns/1.0" versionCode="30603">
+  <name>
+    Fonte da Vida
   </name>
-  <description>&#xD;&#xD;
-        Biblia e Sermoes na sua Língua!&#xD;&#xD;
+  <description>
+        Biblia e Sermoes na sua Língua!
   </description>
-  <author email="jon@equipmoz.org" href="http://equipmoz.org">&#xD;&#xD;
-      Jon Reinagel&#xD;&#xD;
+  <author email="jon@equipmoz.org" href="http://equipmoz.org">
+      Jon Reinagel
   </author>
   <content src="index.html"/>
   <access origin="*" subdomains="true"/>
@@ -26,6 +26,7 @@
   <allow-navigation href="http://192.168.43.62:8101"/>
   <allow-navigation href="http://192.168.100.11:8100"/>
   <allow-navigation href="http://192.168.100.16:8100"/>
+  <allow-navigation href="http://192.168.56.1:8100"/>
   <allow-intent href="http://*/*"/>
   <allow-intent href="https://*/*"/>
   <preference name="target-device" value="universal"/>

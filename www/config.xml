@@ -4,8 +4,8 @@
   xmlns:gap="http://phonegap.com/ns/1.0" 
   xmlns:cdv="http://cordova.apache.org/ns/1.0"
   xmlns:android = "http://schemas.android.com/apk/res/android"
-  version="3.6.1"
-  versionCode="3601" >
+  version="3.6.3"
+  versionCode="3603" >
   <name>
     Fonte da Vida
   </name>
