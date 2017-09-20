@@ -4,7 +4,7 @@
     <div class="waiting"><ion-spinner></ion-spinner></div> 
     <nothing-here></nothing-here>
     <div class="sermons-page">
-        <ion-item ng-repeat="teaching in filteredItems = (settings.teachings | filter : search_query | orgFilter | orderBy : '-created_at')" class="amazingaudioplayer-card" href="#/tab/sermons/teaching-{{teaching.id}}" ng-controller="SermonCardCtrl">
+        <ion-item ng-repeat="teaching in filteredItems = (settings.teachings | filter : search_query | orgFilter | orderBy : '-jonOrder')" class="amazingaudioplayer-card" href="#/tab/sermons/teaching-{{teaching.id}}" ng-controller="SermonCardCtrl">
             
             <div class="title-upper">
                 <h2 ng-if="settings.lang =='en'">"{{teaching.en_title}}"</h2>

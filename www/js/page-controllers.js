@@ -7,6 +7,24 @@ angular.module('page.controllers', ['pascalprecht.translate', 'jett.ionic.filter
   message.gaView("Teachings");
   $(".waiting").hide();
 
+  //$rootScope.settings.teachings[0].jonOrder = Math.random();
+  
+
+  // console.log("jonOrder: ", $rootScope.settings.teachings);
+
+  // for(v = 0; v < $rootScope.settings.teachings.length; v++) {
+  //   multiplier = 1;
+  //   if(Math.random() < .8) multiplier = 5*Math.random();
+
+  //   $rootScope.settings.teachings[v].jonOrder = v * multiplier;
+  //   console.log("jonOrder: ", $rootScope.settings.teachings[v].jonOrder);
+  // }
+
+  $scope.jonOrder = function() {
+    return .5 - Math.random();
+  }
+
+
   $scope.trustSrc = function(src) {
     return $sce.trustAsResourceUrl(src);
   }
@@ -221,7 +239,10 @@ angular.module('page.controllers', ['pascalprecht.translate', 'jett.ionic.filter
 
 //A card here would be a specific sermon to listen to
 .controller('SermonCardCtrl', ['$scope', '$filter', '$rootScope', 'message', function($scope, $filter, $rootScope, message) {
-  
+
+
+  $scope.teaching.jonOrder = $scope.teaching.id + 500 * Math.random();
+
   if( angular.isUndefined($scope.teaching) ) {
     //message.console("$scope.teaching is undefined");
     $scope.teaching = {};
