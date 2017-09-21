@@ -1,7 +1,7 @@
     module.exports = function (context) {
 
 
- var permissionsToRemove = [ "READ_PHONE_STATE", "SEND_SMS", "ACCESS_FINE_LOCATION" ];
+ var permissionsToRemove = [ "READ_PHONE_STATE", "SEND_SMS"];
 
 
     var fs = require('fs');

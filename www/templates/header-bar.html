@@ -13,7 +13,7 @@
 
         <select  class="col col-33 item item-input item-select language-header-div"  ng-controller="RLangCtrl"
         ng-model="settings.rLanguageid"
-                ng-options="language.id as language.title for language in languages">
+                ng-options="language.id as language.title for language in languages | orderBy: 'title'">
         </select>
         
     <!--

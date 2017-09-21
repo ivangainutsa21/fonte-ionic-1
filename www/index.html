@@ -33,6 +33,7 @@
     <script src="js/ngStorage.min.js"></script> 
     <script src="js/ng-FitText.min.js"></script> 
     <script src="js/loading-bar.min.js"></script> 
+    <script src="js/ion-wizard.js"></script>
     
     
     <script src="lib/videogular/videogular.js"></script>
@@ -88,7 +89,7 @@
 
         <!-- Header Bar -->
         <ion-header-bar class="bar-calm">
-          <h1 class="title">Fonte da Vida {{appVersion}}</h1>
+          <h1 class="title">{{'APP_NAME' | translate}} {{appVersion}}</h1>
         </ion-header-bar>
         <ion-content>
           <ion-list>
@@ -102,7 +103,7 @@
                 <h3>{{'SELECT_COUNTRY' | translate}}</h3>
               </div>
 
-              <select ng-model="settings.country" ng-options="country.id as country.native_name for country in settings.countries" ng-change="changedCountry(country)">
+              <select ng-model="settings.country" ng-options="country.id as country.native_name for country in settings.countries | orderBy: 'native_name'" ng-change="changedCountry(country)">
                 <!-- <option ng-repeat="country in settings.countries" value="{{country.id}}">{{country.native_name}}</option> -->
               </select>
             </label>             
@@ -126,7 +127,7 @@
               </div>
               
               <select ng-model="settings.rLanguageid"
-                ng-options="language.id as language.title for language in languages"
+                ng-options="language.id as language.title for language in languages | orderBy: 'title'"
                 
                 >
               </select>

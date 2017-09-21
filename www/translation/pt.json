@@ -5,6 +5,7 @@
     "ABOUT_TITLE": "Sobre o Aplicativo",
     "AGREE": "Eu Concordo - Continua",
     "ALREADY_DOWNLOADED":"Já foi baixado",
+    "APP_NAME": "Fonte da Vida",
     "AUTHOR": "Autor",
     "BACK": "Voltar",
     "BIBLE_BOOKS": "Livros da Bíblia",
@@ -139,7 +140,32 @@
     "TRY_AGAIN": "Por favor, selecione a outra língua e tente de novo",
     "CLICK_HERE": "Diga-nos!",
     "ERROR_FOLDER": "Erro por falta de espaço. Verifique a Memória do dispositivo e tente novamente.",
-    "CHURCH_RESOURCES": "A sua igreja tem recursos nesta língua?"
+    "CHURCH_RESOURCES": "A sua igreja tem recursos nesta língua?",
+    "PARTNERSHIP_MAIN_CONDITION" : "Para tornar-se parceiro do Fonte da Vida deve estar disponível para fornecer-nos recursos digitais quais tenha direitos autorais sobre eles.",
+    "SERMON" : "Sermões",
+    "BOOKS_PDF" : "Livros (PDF)",
+    "AUDIO_BIBLE" : "Biblía em Áudio",
+    "IDIOM" : "DIGITE O SEU IDIOMA",
+    "YOUR_NAME" : "DIGITE O SEU NOME",
+    "YOUR_EMAIL" : "DIGITE O SEU EMAIL",
+    "YOUR_ORGANIZATION" : "DIGITE A ORGANIZAÇÃO QUAL FAZ PARTE",
+    "YOUR_COUNTRY" : "DIGITE SEU PAÍS",
+    "YOUR_PHONE" : "DIGITE SEU TELEFONE",
+    "IF_IS_LEADER" : "Faz parte da liderança e possui direitos para disponibilizar-nos o material?",
+    "LEADER_OPTIONS" : "Escolha uma opção",
+    "LEADER_OPTIONS_CHOOSE" : "ESCOLHA UMA OPÇÃO",
+    "TERMS_CONDITIONS" : "Veja os nossos termos e condições",
+    "TERMS_CONDITIONS_AGREE" : "Li e Concordo com os termos acima.",
+    "TERMS_CONDITIONS_ERROR" : "Concorde com os termos marcando esta caixa",
+    "INPUT_EMPTY" : "PREENCHA ESTE CAMPO",
+    "KIND_RESOURCES" : "Qual o idioma do material que deseja fornecer-nos?",
+    "LANGUAGE_RESOURCES" : "Marque os recursos que deseja fornecer-nos",
+    "TERMS_LINK" : "CLICANDO AQUI",
+    "SUBMIT_FORM" : "SUBMETER REQUISIÇÃO",
+    "LEADER_OPTIONS_Y" : "SIM",
+    "LEADER_OPTIONS_N" : "NÃO",
+    "IMPORTANT": "IMPORTANTE"
+
   }
 
   

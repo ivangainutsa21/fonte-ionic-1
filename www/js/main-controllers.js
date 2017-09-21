@@ -108,10 +108,10 @@ angular.module('main.controllers', ['pascalprecht.translate', 'jett.ionic.filter
     message.console("aapNum: ", $rootScope.settings.aapNum);
     function apiTime() {
       message.console("apiTime called");
-      if(!$rootScope.settings.speakerList.length || (Date.now() > ($rootScope.settings.timerTeacher + 3600000*1))) {
+      if(!$rootScope.settings.speakerList.length || (Date.now() > ($rootScope.settings.timerTeacher + 3600000/12))) {
           getAPI('teacher');
           $rootScope.settings.timerTeacher = Date.now();
-          message.console("teachers will call again at: ", ($rootScope.settings.timerTeacher + 3600000*1));
+          message.console("teachers will call again at: ", ($rootScope.settings.timerTeacher + 3600000/12));
         } else {
           message.console("teachers already loaded");
         };
@@ -129,10 +129,10 @@ angular.module('main.controllers', ['pascalprecht.translate', 'jett.ionic.filter
 
       //Call from API for API list
       message.console("Timer, date.now: ", $rootScope.settings.timerLanguage, Date.now());
-      if(!$rootScope.settings.languages.length < 2 || (Date.now() > ($rootScope.settings.timerLanguage + 86400000*1))) {
+      if(!$rootScope.settings.languages.length < 2 || (Date.now() > ($rootScope.settings.timerLanguage + 86400000/24))) {
         getAPI('language', 'v=2');
         $rootScope.settings.timerTeacher = Date.now();
-          message.console("Languages will call again at: ", ($rootScope.settings.timerLanguage + 86400000*1));
+          message.console("Languages will call again at: ", ($rootScope.settings.timerLanguage + 86400000/24));
       } else {
         message.console("languages already loaded");
       };
@@ -158,18 +158,18 @@ angular.module('main.controllers', ['pascalprecht.translate', 'jett.ionic.filter
           message.console("Licenses already loaded");
         };
 
-      if(!$rootScope.settings.orgList.length || (Date.now() > ($rootScope.settings.timerOrg + 86400000*1))) {
+      if(!$rootScope.settings.orgList.length || (Date.now() > ($rootScope.settings.timerOrg + 86400000/12))) {
           getAPI('organization');
           $rootScope.settings.timerOrg = Date.now();
-          message.console("organizations will call again at: ",($rootScope.settings.timerOrg + 86400000*1));
+          message.console("organizations will call again at: ",($rootScope.settings.timerOrg + 86400000/12));
         } else {
-          message.console("organizations already loaded, will call again at: ", $rootScope.settings.timerOrg + 86400000*1, Date.now());
+          message.console("organizations already loaded, will call again at: ", $rootScope.settings.timerOrg + 86400000/12, Date.now());
         };
 
-      if(!$rootScope.settings.teachings.length || (Date.now() > ($rootScope.settings.timerTeaching + 86400000*1))) {
+      if(!$rootScope.settings.teachings.length || (Date.now() > ($rootScope.settings.timerTeaching + 86400000/48))) {
           getAPI('teaching', 'rlang=' + $rootScope.settings.rLanguageid);
           $rootScope.settings.timerTeaching = Date.now();
-          message.console("teachings will call again at: ", ($rootScope.settings.timerTeaching + 86400000*1));
+          message.console("teachings will call again at: ", ($rootScope.settings.timerTeaching + 86400000/48));
         } else {
           message.console("teachings already loaded");
         };
@@ -530,7 +530,8 @@ $scope.downloadThis = function(title, url, type, folder, extension) {
     $("#fp-div").animate({
       'left': number * -2000 + "px"
     }, 400, 'linear');
-    $ionicScrollDelegate.scrollTop(true);  
+    $ionicScrollDelegate.scrollTop(true);
+    $("#fp-2").fadeOut(800);
   }
 
   if($rootScope.settings.country != "") {

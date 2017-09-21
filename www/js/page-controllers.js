@@ -100,8 +100,8 @@ angular.module('page.controllers', ['pascalprecht.translate', 'jett.ionic.filter
 
 
 .controller('RLangCtrl', ['$scope', '$rootScope', '$filter', 'message', 'ApiServe', function($scope, $rootScope, $filter, message, ApiServe) {
-  //Limits the number of languages getting piped through to the rlanguage selector
   
+  //Limits the number of languages getting piped through to the rlanguage selector
   function languageFilter() {
     var languageList;
     if($rootScope.settings.countries != undefined) {
@@ -112,16 +112,14 @@ angular.module('page.controllers', ['pascalprecht.translate', 'jett.ionic.filter
 
     message.console("languageList: ", languageList, languageList.length);
 
+    //For each ID, find the language that is associated
     output = [];
     for (var i = 0; i < languageList.length; i++) {
       out = $filter('filter')($rootScope.settings.languages, {id: languageList[i]})[0];
-      //message.console("Variable out: ", out);
       output.push(out);
     }
-    //message.console("Output after filtered: ", output);
 
-
-    //If Language List is non-existent, we pull all languages
+    //If Language List is non-existent, we pull all languages - otherwise we pull the language we need and apply to the title attribute
     if(languageList.length) {
       message.console("output: ", output);
       for (var i = 0; i < output.length; i++) {
@@ -143,15 +141,14 @@ angular.module('page.controllers', ['pascalprecht.translate', 'jett.ionic.filter
       $scope.languages = $rootScope.settings.languages;
     }
 
-    //message.console("$scope.langauges: ", $scope.languages);
-
     //If old resource language doesn't exist in new country, default to Portuguese
     if($rootScope.settings.rLanguage != undefined) {
-      if($filter('filter')($scope.languages, {id: $rootScope.settings.rLanguageid})[0] != undefined) {
-        //message.console("Language exists in new country; we are fine");
+      if($filter('filter')($scope.languages, {id: $rootScope.settings.rLanguageid}, true)[0] != undefined) {
+        message.console("Language exists in new country; we are fine");
       } else {
-        $rootScope.settings.rLanguageid = 0;
-        $rootScope.settings.rLanguage = $rootScope.settings.languages[0];
+        message.console("potential language issues: $scope.languages: ", $scope.languages);
+        $rootScope.settings.rLanguageid = $scope.languages[0].id;
+        $rootScope.settings.rLanguage = $scope.languages[0];
         //message.console("Language does not exist in new country; changing");
       }
     }
@@ -224,7 +221,10 @@ angular.module('page.controllers', ['pascalprecht.translate', 'jett.ionic.filter
 
 //A card here would be a specific sermon to listen to
 .controller('SermonCardCtrl', ['$scope', '$filter', '$rootScope', 'message', function($scope, $filter, $rootScope, message) {
-  
+
+  //randomization formula, greatest to least
+  $scope.teaching.jonOrder = $scope.teaching.id + 500 * Math.random();
+
   if( angular.isUndefined($scope.teaching) ) {
     //message.console("$scope.teaching is undefined");
     $scope.teaching = {};
@@ -273,6 +273,9 @@ angular.module('page.controllers', ['pascalprecht.translate', 'jett.ionic.filter
 }])
 
 .controller('ResourceCardCtrl', ['$scope', '$filter', '$rootScope', 'message', function($scope, $filter, $rootScope, message) {
+  //randomization formula, greatest to least
+  $scope.resourceList.jonOrder = $scope.resourceList.id + 500 * Math.random();
+
   $scope.teacher = $filter('filter')($rootScope.settings.speakerList, {id: $scope.resource.teacher_id})[0];
   $scope.org = $filter('filter')($rootScope.settings.orgList, {id: $scope.resource.organization_id})[0];
   $scope.license = $filter('filter')($rootScope.settings.licenses, {id: $scope.org.license_type_id})[0];
@@ -517,12 +520,13 @@ angular.module('page.controllers', ['pascalprecht.translate', 'jett.ionic.filter
 }])
 
 //Any page that has a form is controlled here. Ex: sending email, organization signup, etc.
-.controller('FormCtrl', [ '$http', '$scope', '$window', '$translate', 'message', function($http, $scope, $window, $translate, message){
+.controller('FormCtrl', [ '$http', '$scope', '$window', '$translate', 'message', '$rootScope', function($http, $scope, $window, $translate, message, $rootScope){
   //message.console("FormCtrl called");
   this.sendMail = function(emailInfo, formType) {
 
     //message.console('SendMail called:');
     message.gaEvent("Mail", "Sent", formType);
+
 
     if (formType == 'copyright') {
       var email = {
@@ -531,40 +535,65 @@ angular.module('page.controllers', ['pascalprecht.translate', 'jett.ionic.filter
         headers: {
          'Content-Type': 'application/x-www-form-urlencoded'
         },
-        data: $.param({ 
-          'name'     : $('input[name=name]').val(),
-          'email'    : $('input[name=email]').val(),
-          'organization' : $('input[name=organization]').val(),
-          'teaching' : $('input[name=teaching]').val(),
-          'issue' : $('input[name=issue]').val()
+        data:$.param({
+          'resources' : $('input[name=resources]').val(),
+          'idioma' : $('input[name=idioma]').val(),
+          
+          'name' : $('input[name=nome]').val(),
+          'email' : $('input[name=email]').val(),
+          'telefone' : $('input[name=telefone]').val(),
+          'pais' : $('input[name=pais]').val(),
+          'organizacao' : $('input[name=organizacao]').val(),
+          
+          'lideranca' : $('select[name=lideranca]').val()
         })
       }
     }
+
+
+
     else if (formType == 'partnership') {
+      //collect the values of checkboxes.
+      var recursos = $('input[name=resources]');
+
+      //initializing the values of checkboxes as empty.
+       var recurso1 = ''; var recurso2 = '';  var recurso3 = '';
+
+      //verify if the checkboxes were CHECKED by the user. if cheched: set new values for variables. 
+       if(recursos[0].checked) var recurso1 = "Sermoes";
+       if(recursos[1].checked) var recurso2 = "Livros";
+       if(recursos[2].checked) var recurso3 = "Biblia(Audio)";
+       
+       //join the values of checked resources.
+       var todos_recursos = recurso1+' '+recurso2+' '+recurso3;
+
       var email = {
         method: 'POST',
-        url: 'http://api.fontedavida.org/postmail.php',
+        url: 'http://api.fontedavida.org/postmail_02.php',
         headers: {
          'Content-Type': 'application/x-www-form-urlencoded'
         },
-        data: $.param({ 
-          'name'     : $('input[name=name]').val(),
-          'email'    : $('input[name=email]').val(),
-          'organization' : $('input[name=organization]').val(),
-          'phone' : $('input[name=phone]').val(),
-          'details' : $('input[name=details]').val(),
-          'languages' : $('input[name=languages]').val()
-        }) 
+        data:$.param({
+          'resources' : todos_recursos,
+          'idioma' : $('input[name=idioma]').val(),
+          'idiomadeform' : $rootScope.settings.lang,
+          'name' : $('input[name=nome]').val(),
+          'email' : $('input[name=email]').val(),
+          'telefone' : $('input[name=telefone]').val(),
+          'pais' : $('input[name=pais]').val(),
+          'organizacao' : $('input[name=organizacao]').val(),
+          'lideranca' : $('select[name=lideranca]').val(),
+       })
       }
     }
 
-    $http(email).then(function(){
+    $http(email).then(function(data){
       //message.console("email success", email);
       $window.location.href = '#/tab/dash';
       message.alert('EMAIL_SUCCESS');
     }, 
     function(){
-      message.alert('EMAIL_FAIL');
+      message.alert('EMAIL_FAIL' + data);
     });
   }
 }])

@@ -10,19 +10,25 @@
     <div class="row">
         <div ng-if="settings.lang == 'en'" class="padding item-text-wrap">{{src.resource.en_description}}</div>
         <div ng-if="settings.lang == 'pt'" class="padding item-text-wrap">{{src.resource.pt_description}}</div>
-        <div class="col col-33 col-bottofm" style="float:right">
-            <button class="button button-calm icon-left ion-document-text" ng-click="resourceOpen(src.resource)" style="position:relative;left:3vw;">{{'OPEN' | translate}}</button>
-        </div>
     </div> 
     
     <div style="margin:1vh 20px 0 0;">
-        <dwn-button class="calm" ng-hide="src.resource.fileUrlLocalPath" value="{{src.resource}}" case-compare="resources" style="margin-top: -30px;font-size: 350%;margin-right:20px;"></dwn-button>
         
         <!-- Maybe next version. For now we are taking out the social sharing icons -->
         <!--         <i class="icon ion-email social-link-button" onclick="var instance = new SocialSharing(); instance.shareViaEmail('Message', 'Subject', 'benf31@outlook.com');"></i>
         <i class="icon ion-android-textsms social-link-button" onclick="var instance = new SocialSharing(); instance.shareViaSMS("test", '');"></i>
         <i class="icon ion-social-whatsapp social-link-button" onclick="var instance = new SocialSharing(); instance.shareViaWhatsApp('Digital Signature Maker', null, 'https://play.google.com/store/apps/details?id=com.prantikv.digitalsignaturemaker', null, function(errormsg){alert('Error: Cannot Share');}"></i> -->
     </div>
+
+
+    <div class="row">
+        <div class="col col-50">
+            <dwn-button class="calm" ng-hide="src.resource.fileUrlLocalPath" value="{{src.resource}}" case-compare="resources" style="margin-top: -30px;font-size: 350%;margin-right:20px;"></dwn-button>
+        </div>
+            <div class="col col-50">
+                <button class="button button-calm icon-left ion-document-text" ng-click="resourceOpen(src.resource)" style="position:relative;left:3vw;">{{'OPEN' | translate}}</button>
+            </div>
+        </div>  
         <!--Language Section-->
         
         <a class="item item-icon-left" style="border: none">
