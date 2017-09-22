@@ -522,6 +522,17 @@ angular.module('page.controllers', ['pascalprecht.translate', 'jett.ionic.filter
 //Any page that has a form is controlled here. Ex: sending email, organization signup, etc.
 .controller('FormCtrl', [ '$http', '$scope', '$window', '$translate', 'message', '$rootScope', function($http, $scope, $window, $translate, message, $rootScope){
   //message.console("FormCtrl called");
+  $scope.save = function() {
+    console.log($scope.partnership);
+    if ($('form').$valid) {      
+      //form is valid
+    }
+    else {
+        //if form is not valid set $scope.addContact.submitted to true     
+        console.log("Invalid Form");
+        $('form').addClass("submitted");    
+    }};
+
   this.sendMail = function(emailInfo, formType) {
 
     //message.console('SendMail called:');

@@ -1,54 +1,71 @@
 <ion-view view-title="{{'PARTNERSHIP' | translate}}">
   <ion-content on-swipe-left="goToStart()" class="about-page">
 	<ion-list>
-    		<ion-item>
+    	<form name="partnership" ng-submit="form.sendMail(partnership, 'partnership')">	
+        <ion-item>
     			<div class="item item-divider">{{'PARTNERSHIP_INFORMATION' | translate}}</div>
     	    	<div class="item item-text-wrap"> <strong class="assertive">{{'IMPORTANT' | translate}}:</strong>  
     	    	    {{'PARTNERSHIP_MAIN_CONDITION' | translate}}
     	    	</div>
     	    	<!--ng-submit="form.sendMail(partnership, 'partnership')" -->
-    	    	<form name="partnership" ng-submit="form.sendMail(partnership, 'partnership')">
+    	    	
     		</ion-item>
     	
       	<ion-item>
       		<p><strong>{{'KIND_RESOURCES' | translate}}</strong></p>
+          <span class="assertive" ng-show="partnership.resources.$touched && partnership.resources.$invalid">{{'INPUT_EMPTY' | translate}}</span>
         	<ul class="list">
-              <li class="item item-checkbox">{{'SERMON' | translate}} <label class="checkbox">  <input type="checkbox" name="resources"/> </label> </li>
-              <li class="item item-checkbox"> {{'BOOKS_PDF' |translate}}<label class="checkbox">  <input type="checkbox" name="resources"/> </label> </li>
-              <li class="item item-checkbox">{{'AUDIO_BIBLE' | translate}} <label class="checkbox">  <input type="checkbox" name="resources"/> </label> </li>
+              <li class="item item-checkbox">
+                {{'SERMON' | translate}}
+                <label class="checkbox">
+                  <input type="checkbox" name="resources" ng-model="resources.sermon" ng-class="{submitted:partnership.submitted}" ng-required="!(resources.bible || resources.book || resources.sermon)"/>
+                </label>
+              </li>
+              <li class="item item-checkbox"> {{  'BOOKS_PDF' |translate}}
+                <label class="checkbox">
+                  <input type="checkbox" name="resources"
+                  ng-model="resources.book" ng-class="{submitted:partnership.submitted}" ng-required="!(resources.bible || resources.book || resources.sermon)"/>
+                </label>
+              </li>
+              <li class="item item-checkbox">{{'AUDIO_BIBLE' | translate}}
+                <label class="checkbox">
+                  <input type="checkbox" name="resources" ng-model="resources.bible" ng-class="{submitted:partnership.submitted}" ng-required="!(resources.bible || resources.book || resources.sermon)"/>
+                </label>
+              </li>
           	</ul>  
         </ion-item>
        
         <ion-item>
         	<p><strong>{{'LANGUAGE_RESOURCES' | translate}}</strong></p>
         	<label class="item item-input">
-        		<input type="text" name="idioma" placeholder="{{'IDIOM' | translate}}" ng-model="idioma" required />
+        		<input type="text" name="idioma" placeholder="{{'IDIOM' | translate}}" ng-model="idioma" ng-class="{submitted:partnership.submitted}" required />
             <span class="assertive" ng-show="partnership.idioma.$touched && partnership.idioma.$invalid">{{'INPUT_EMPTY' | translate}}</span>
         	</label>
         </ion-item>
 
         <ion-item>
           <label class="item item-input">
-            <input type="text" name="nome" placeholder="{{'YOUR_NAME' | translate}}" ng-model="nome" required/>
+            <input type="text" name="nome" placeholder="{{'YOUR_NAME' | translate}}" ng-model="nome" ng-class="{submitted:partnership.submitted}" required/>
             <span class="assertive" ng-show="partnership.nome.$touched && partnership.nome.$invalid">{{'INPUT_EMPTY' | translate}}</span>
           </label>
 
           <label class="item item-input">
-            <input type="email" name="email" placeholder="{{'YOUR_EMAIL' | translate}}" />
+            <input type="email" name="email" ng-class="{submitted:partnership.submitted}" placeholder="{{'YOUR_EMAIL' | translate}}" />
+            <span class="assertive" ng-show="partnership.nome.$touched && partnership.nome.$invalid">{{'INPUT_EMPTY' | translate}}</span>
           </label>
 
           <label class="item item-input">
-            <input type="text" name="telefone" placeholder="{{'YOUR_PHONE' | translate}}" ng-model="telefone" required />
+            <input type="text" name="telefone" placeholder="{{'YOUR_PHONE' | translate}}" ng-model="telefone" ng-class="{submitted:partnership.submitted}" required />
             <span class="assertive" ng-show="partnership.telefone.$touched && partnership.telefone.$invalid">{{'INPUT_EMPTY' | translate}}</span>
           </label>
 
           <label class="item item-input">
-            <input type="text" id="pais" name="pais" placeholder="{{'YOUR_COUNTRY' | translate}}" ng-model="pais" required />
+            <input type="text" id="pais" name="pais" placeholder="{{'YOUR_COUNTRY' | translate}}" ng-model="pais" ng-class="{submitted:partnership.submitted}" required />
             <span class="assertive" ng-show="partnership.pais.$touched && partnership.pais.$invalid">{{'INPUT_EMPTY' | translate}}</span>
           </label>
 
           <label class="item item-input">
-            <input type="text" name="organizacao" placeholder="{{'YOUR_ORGANIZATION' | translate}}" ng-model="organizacao" required />
+            <input type="text" name="organizacao" placeholder="{{'YOUR_ORGANIZATION' | translate}}" ng-model="organizacao" ng-class="{submitted:partnership.submitted}" required />
             <span class="assertive" ng-show="partnership.organizacao.$touched && partnership.organizacao.$invalid">{{'INPUT_EMPTY' | translate}}</span>
           </label>
           <label class="item item-select">
@@ -69,14 +86,14 @@
         	<p>{{'TERMS_CONDITIONS' | translate}} <a href="http://api.fontedavida.org/termos.html" target="_blank">{{'TERMS_LINK' | translate}}</a> </p>
         	<p class="item item-checkbox">
         	{{'TERMS_CONDITIONS_AGREE' | translate}}
-        		<label class="checkbox"> <input type="checkbox" name="condicoes" ng-model="condicoes" required/> 
+        		<label class="checkbox"> <input type="checkbox" name="condicoes" ng-class="{submitted:partnership.submitted}" ng-model="condicoes" required/> 
             
             </label><span class="assertive" ng-show="partnership.condicoes.$touched && partnership.condicoes.$invalid">{{'TERMS_CONDITIONS_ERROR' | translate}}</span>
         	</p>
         </ion-item>
 
         <ion-item>
-        	<button type="submit" class="button button-block button-positive" name="submeter" ng-disabled="partnership.$invalid">{{'SUBMIT_FORM' | translate}}</button>
+        	<button type="submit" class="button button-block button-positive" ng-click="save()" name="submit">{{'SUBMIT_FORM' | translate}}</button>
         </ion-item>
 		</form>
     </ion-list>

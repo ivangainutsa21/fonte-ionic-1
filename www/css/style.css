@@ -17,6 +17,11 @@
   display: block !important;
 }
 
+form.submitted .ng-invalid
+{
+    border:1px solid #f00;
+}
+
 /*Ng Cloak addition*/
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
 	display: none !important;

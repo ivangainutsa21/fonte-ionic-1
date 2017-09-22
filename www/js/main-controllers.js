@@ -56,6 +56,10 @@ angular.module('main.controllers', ['pascalprecht.translate', 'jett.ionic.filter
             $rootScope.settings.teachings = response.data;
             break;
 
+          case 'country':
+            $rootScope.settings.country = response.data;
+            break;
+
           case 'video':
             //$rootScope.settings.videos = response.data;
             break;
@@ -85,6 +89,7 @@ angular.module('main.controllers', ['pascalprecht.translate', 'jett.ionic.filter
       subscriptions: [],
       timerTeacher: Date.now(),
       timerTeaching: Date.now(),
+      timerCountry: Date.now(),
       timerOrg: Date.now(),
       timerResource: Date.now(),
       timerLanguage: Date.now(),
@@ -116,6 +121,13 @@ angular.module('main.controllers', ['pascalprecht.translate', 'jett.ionic.filter
           message.console("teachers already loaded");
         };
 
+      if(Date.now() > ($rootScope.settings.timerCountry + 3600000/12)) {
+          getAPI('country');
+          $rootScope.settings.timerCountry = Date.now();
+          message.console("timerCountry will call again at: ", ($rootScope.settings.timerTeacher + 3600000/12));
+        } else {
+          message.console("countries recent - not reloading");
+        };
 
       //Call for first time use from local drive
       if(!$rootScope.settings.languages.length) {
