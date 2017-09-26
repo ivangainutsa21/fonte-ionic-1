@@ -348,6 +348,10 @@ p.date-display {
  		padding-right: 0px;
  		float:none;
  	}
+ 	.bible-org-info {
+ 		max-height: 350px;
+ 	}
+
  	.bible-download {
  		float:left;
  	}

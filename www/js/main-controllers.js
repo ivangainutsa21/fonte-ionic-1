@@ -57,7 +57,7 @@ angular.module('main.controllers', ['pascalprecht.translate', 'jett.ionic.filter
             break;
 
           case 'country':
-            $rootScope.settings.country = response.data;
+            $rootScope.settings.countries = response.data;
             break;
 
           case 'video':
@@ -545,6 +545,14 @@ $scope.downloadThis = function(title, url, type, folder, extension) {
     $ionicScrollDelegate.scrollTop(true);
     $("#fp-2").fadeOut(800);
   }
+
+  $scope.previous = function() {
+     $("#fp-div").animate({
+      'left': "-2000px"
+    }, 400, 'linear');
+    $("#fp-2").fadeIn(800);
+  }
+
 
   if($rootScope.settings.country != "") {
     $("#fp-div").css("left", "-4000px");
