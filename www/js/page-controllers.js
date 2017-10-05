@@ -54,7 +54,7 @@ angular.module('page.controllers', ['pascalprecht.translate', 'jett.ionic.filter
 
 }])
 
-.controller('CountryCtrl', ['$scope', '$rootScope', 'ApiServe', 'message', function($scope, $rootScope, ApiServe, message) {
+.controller('CountryCtrl', ['$scope', '$rootScope', 'ApiServe', 'message', '$http', function($scope, $rootScope, ApiServe, message, $http) {
     if($rootScope.settings.countries) {
       //message.console("countries already exists");
       $scope.countries = $rootScope.settings.countries;
@@ -69,6 +69,13 @@ angular.module('page.controllers', ['pascalprecht.translate', 'jett.ionic.filter
         $scope.countries = response.data;
         message.console("country API remote data returned", response.data);
         $rootScope.settings.countries = response.data;
+
+        //In case we can't find the flag locally, grab it from the server!
+         angular.forEach($rootScope.settings.countries, function(item){
+          $http.get('../flags/' + item.code + '.svg').error(function(error) {
+            $(".flag-" + item.code).css("background-image", "url('http://web.fontedavida.org/flags/" + item.code+ ".svg'");
+          });
+       });
       });
     }
 
@@ -522,6 +529,17 @@ angular.module('page.controllers', ['pascalprecht.translate', 'jett.ionic.filter
 //Any page that has a form is controlled here. Ex: sending email, organization signup, etc.
 .controller('FormCtrl', [ '$http', '$scope', '$window', '$translate', 'message', '$rootScope', function($http, $scope, $window, $translate, message, $rootScope){
   //message.console("FormCtrl called");
+  $scope.save = function() {
+    console.log($scope.partnership);
+    if ($('form').$valid) {      
+      //form is valid
+    }
+    else {
+        //if form is not valid set $scope.addContact.submitted to true     
+        console.log("Invalid Form");
+        $('form').addClass("submitted");    
+    }};
+
   this.sendMail = function(emailInfo, formType) {
 
     //message.console('SendMail called:');

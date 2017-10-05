@@ -239,11 +239,17 @@ angular.module('starter', ['ionic',
 
         if(typeof navigator.globalization !== "undefined" && $rootScope.settings.runTimes < 2) {
           navigator.globalization.getPreferredLanguage(function(syslanguage) {
-            console.log(syslanguage.value);
-            $translate.use((syslanguage.value).split("-")[0]).then(function(data) {
+            console.log("language: ", syslanguage.value);
+            if ((syslanguage.value).split("-")[0] == ('en') || (syslanguage.value).split("-")[0] == ('pt')) {
+              language = (syslanguage.value).split("-")[0];
+            } else {
+              language = 'en';
+            }
+            $translate.use(language).then(function(data) {
                 console.log("Language-choice SUCCESS through OS settings: " + data);
                 $rootScope.settings.lang = (syslanguage.value).split("-")[0];
                 $rootScope.lang = $rootScope.settings.lang;
+                message.subscribeToTopic("appLang" + $rootScope.settings.lang);
                 setRLang($rootScope.settings.lang);
               }, function(data) {
                 console.log("Language-choice FAIL through OS settings" + data);
